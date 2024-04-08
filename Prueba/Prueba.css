@@ -1,0 +1,111 @@
+body{
+    background-color:#bbbcc0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ProgressBar */
+#myProgress {
+    width: 100%;
+    background-color: #ddd;
+}
+
+#myBar {
+    width: 0%;
+    height: 30px;
+    background-color: #4CAF50;
+    text-align: center; 
+    line-height: 30px; 
+    color: white; 
+}
+
+/* Form */
+.form-box {
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    max-width: 300px;
+    background: #f1f7fe;
+    overflow: hidden;
+    border-radius: 16px;
+    color: #010101;
+    font-family: 'Bahnschrift', 'Roboto Condensed';
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 24px 24px;
+    gap: 16px;
+    text-align: center;
+}
+
+.title {
+font-weight: bold;
+font-size: 1.6rem;
+}
+
+.subtitle {
+font-size: 1rem;
+color: #666;
+}
+
+/*Inputs box*/
+.form-container {
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 1rem 0 .5rem;
+    width: 100%;
+}
+
+.input {
+background: none;
+border: 0;
+outline: 0;
+height: 40px;
+width: 100%;
+border-bottom: 1px solid #eee;
+font-size: .9rem;
+padding: 8px 15px;
+}
+
+.AddWidgetOptions {
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    justify-content: space-between;
+}
+
+/*Button*/
+.cancelButton {
+    background-color: #ff3232;
+    color: #fff;
+    border: 0;
+    border-radius: 24px;
+    padding: 10px 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.acceptButton {
+    background-color: #2fb905;
+    color: #fff;
+    border: 0;
+    border-radius: 24px;
+    padding: 10px 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.rethinkButton {
+    background-color: #0520b9;
+    color: #fff;
+    border: 0;
+    border-radius: 24px;
+    padding: 10px 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}

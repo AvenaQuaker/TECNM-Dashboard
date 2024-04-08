@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="Login.css"/>
+</head>
+<body>
+    <div class="login-layout">
+        <div class="image-1"></div>
+        <div class="login-right-frame"></div>
+        <span class="log-in">Log In</span>
+        <span class="welcome-back">Welcome Back</span>
+        <span class="email">Email</span>
+        <input type="text" class="email-text-box"></input>
+        <span class="password">Password</span>
+        <span class="forgot-password">Forgot password?</span>
+        <input type="password" class="password-text-box" id="passwordTB"></input>
+        <div class="invisible-1" onclick="ShowPassword()"></div>
+        <span class="problems">Problems?</span>
+        <a href="#" onclick="Loading('Dashboard.html')" class="request-help">Request Help!</a>
+    </div>
+
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="overlay" id="overlay">
+        <div class="card" id="card">
+            <div class="boxes">
+                <div class="boxer">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="boxer">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="boxer">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="boxer">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <span id="Loading">Loading...</span>
+        </div>
+    </div>
+<script>
+    function ShowPassword() {
+        var Password = document.getElementById('passwordTB')
+        if(Password.type === "password") {
+            Password.type = 'text';
+        } else {
+            Password.type = "password";
+        }
+    }
+
+    function Loading(url){
+        document.querySelector('.overlay').style.display = 'block';
+        setTimeout(function(){
+            window.location.href = url;
+        }, 2000);
+    }
+</script>
+</body>
+</body>
+</html>
