@@ -181,7 +181,29 @@
             <button type="button" class="rethinkButton" id="rethinkDeletion">Cancel</button>
             <button type="button" class="cancelButton" id="acceptDeletion">Delete</button>
         </div>
-</div>
+    </div>
+
+    <!-- Modify button form -->
+    <div class="modify-box" id="modify-widget">
+        <form class="form">
+            <span class="title">Widget Modification</span>
+            <span class="subtitle">Modify the current content by adressing the new data</span>
+            <div class="form-container">
+                    <input type="text" class="input" name="WTitle" placeholder="Title" required>
+                    <input type="text" class="input" name="WDesc" placeholder="Description" required>
+                    <input type="number" class="input" name="WDays" placeholder="Days Left" required>
+                    <select class="input" name="WType" placeholder="Widget Type" required>
+                        <option>Sales goal</option>
+                        <option>Debtors counter</option>
+                        <option>Payment ammount</option>
+                    </select>
+            </div>
+            <div class="AddWidgetOptions">
+                <button type="button" class="cancelModify" id="cancelModify">Cancel</button>
+                <button type="button" class="acceptModify" id="acceptModify">Modify</button>
+            </div>
+        </form>
+    </div>
 <script src="Dashboard.js"></script>
 </body>
 </html>

@@ -303,7 +303,7 @@ background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Form */
-.form-box {
+.form-box{
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
     max-width: 300px;
     background: #f1f7fe;
@@ -356,7 +356,9 @@ background-color: rgba(0, 0, 0, 0.5);
     }
 }
 
-.deletion-box {
+
+
+.deletion-box{
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
     max-width: 150px;
     background: #f1f7fe;
@@ -405,6 +407,61 @@ background-color: rgba(0, 0, 0, 0.5);
     }
 }
 
+.modify-box{
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    max-width: 250px;
+    background: #f1f7fe;
+    overflow: hidden;
+    border-radius: 16px;
+    color: #010101;
+    font-family: 'Bahnschrift', 'Roboto Condensed';
+    position: fixed;
+    opacity: 0;
+    top: 20%;
+    left: 70%;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+
+    .form { 
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 32px 24px 24px;
+        gap: 16px;
+        text-align: center;
+    
+        .form-container {
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: #fff;
+            margin: 1rem 0 .5rem;
+            width: 100%;
+        }
+        
+        button {
+            transition: box-shadow 0.5s ease-in-out;
+        }
+    
+        button:hover{
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+            transition: box-shadow 0.5s ease-in-out;
+        }
+    
+        .title {
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+    
+        .subtitle {
+            font-size: 0.9rem;
+            color: #666;
+        }
+            
+    }
+}
+
+
+
 .input {
     background: none;
     border: 0;
@@ -423,7 +480,7 @@ background-color: rgba(0, 0, 0, 0.5);
 }
 
 /*Button*/
-.cancelButton {
+.cancelButton, .cancelModify {
     background-color: #ff3232;
     color: #fff;
     border: 0;
@@ -449,7 +506,7 @@ background-color: rgba(0, 0, 0, 0.5);
     box-shadow: none;
 }
 
-.rethinkButton {
+.rethinkButton,.acceptModify {
     background-color: #0520b9;
     color: #fff;
     border: 0;
@@ -602,8 +659,8 @@ color: #000000;
 }
 
 .IWDRight2 {
-    background:url('Resources/Menu\ Vertical.png')(50% / cover) no-repeat;
-    width: 0.8rem;
+    background:url('Resources/Edit.png')(50% / cover) no-repeat;
+    width: 1.3rem;
     height: 1.2rem;
     padding: 0.1rem;
     margin-left: 1rem;
@@ -1080,14 +1137,14 @@ color: #787878;
 }
 
 .widgetMsg {
-position: relative;
-margin-bottom: 1.6rem;
-display: inline-block;
-overflow-wrap: break-word;
-font-family: 'Bahnschrift', 'Roboto Condensed';
-font-weight: 300;
-font-size: 0.8rem;
-color: #787878;
+    position: relative;
+    margin-bottom: 1.4rem;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Bahnschrift', 'Roboto Condensed';
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: #787878;
 }
 
 .widgetProg {

@@ -304,6 +304,52 @@ body {
   font-size: 1rem;
 }
 
+.modify-box {
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+  max-width: 250px;
+  background: #f1f7fe;
+  overflow: hidden;
+  border-radius: 16px;
+  color: #010101;
+  font-family: "Bahnschrift", "Roboto Condensed";
+  position: fixed;
+  opacity: 0;
+  top: 20%;
+  left: 70%;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+.modify-box .form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px 24px;
+  gap: 16px;
+  text-align: center;
+}
+.modify-box .form .form-container {
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #fff;
+  margin: 1rem 0 0.5rem;
+  width: 100%;
+}
+.modify-box .form button {
+  transition: box-shadow 0.5s ease-in-out;
+}
+.modify-box .form button:hover {
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.5s ease-in-out;
+}
+.modify-box .form .title {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.modify-box .form .subtitle {
+  font-size: 0.9rem;
+  color: #666;
+}
+
 .input {
   background: none;
   border: 0;
@@ -322,7 +368,7 @@ body {
 }
 
 /*Button*/
-.cancelButton {
+.cancelButton, .cancelModify {
   background-color: #ff3232;
   color: #fff;
   border: 0;
@@ -348,7 +394,7 @@ body {
   box-shadow: none;
 }
 
-.rethinkButton {
+.rethinkButton, .acceptModify {
   background-color: #0520b9;
   color: #fff;
   border: 0;
@@ -501,8 +547,8 @@ body {
 }
 
 .IWDRight2 {
-  background: url("Resources/Menu Vertical.png") 50%/cover no-repeat;
-  width: 0.8rem;
+  background: url("Resources/Edit.png") 50%/cover no-repeat;
+  width: 1.3rem;
   height: 1.2rem;
   padding: 0.1rem;
   margin-left: 1rem;
@@ -955,7 +1001,7 @@ body {
 
 .widgetMsg {
   position: relative;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.4rem;
   display: inline-block;
   overflow-wrap: break-word;
   font-family: "Bahnschrift", "Roboto Condensed";

@@ -9,6 +9,7 @@
     let grid = document.getElementById("grid");
     let Form = document.querySelector('.form-box')
     let deletionBox = document.querySelector('.deletion-box')
+    let modifyBox = document.querySelector('.modify-box')
     let deleteBox = document.getElementById("deleteBoxWidget");
     let Projects = document.getElementById('navImg1')
     let Charts = document.getElementById('navImg2')
@@ -89,9 +90,7 @@
             interWidgetDate.classList.add("interWidgetDate");
             IWDLeft.classList.add("IWDLeft");
             IWDRight.classList.add("IWDRight");
-
             IWDRight2.classList.add("IWDRight2");
-
             widgetTitle.classList.add("widgetTitle");
             widgetMsg.classList.add("widgetMsg");
             midWidget.classList.add("midWidget");
@@ -149,6 +148,19 @@
                 const widget = event.target.closest(".widget");
                 if (widget) {
                     const indice = Array.from(widget.parentNode.children).indexOf(widget) + 1;
+                    DataWidget = indice;
+                }
+            })
+
+            IWDRight2.addEventListener('click',(event)=>{
+                modifyBox.style.opacity = "1";
+                modifyBox.style.pointerEvents = 'auto';
+                Form.style.opacity = '0';
+                Form.style.pointerEvents = 'none';
+
+                const widget = event.target.closest(".widget");
+                if (widget) {
+                    const indice = Array.from(widget.parentNode.children).indexOf(widget) + 1;
                     console.log("Contenedor seleccionado por el botón:", indice);
                     DataWidget = indice;
                 }
@@ -157,9 +169,7 @@
             //Elements Insertion
             interWidgetDate.appendChild(IWDLeft);
             interWidgetDate.appendChild(IWDRight);
-
             interWidgetDate.appendChild(IWDRight2);
-
             midWidget.appendChild(widgetProg);
             midWidget.appendChild(widgetPerc);
             lowmidWidget.appendChild(progressBar);
@@ -209,6 +219,9 @@
 
     //Managment methods that controls the Widget Insertion box
     document.getElementById('addBox').addEventListener('click',()=>{
+        modifyBox.style.opacity = '0'
+        modifyBox.style.pointerEvents = 'none'
+
         Form.style.opacity = '1';
         Form.style.pointerEvents = 'auto';
     })
@@ -229,8 +242,20 @@
         removeBox(DataWidget)
         Update()
     })
-    
+    //Methods that controls the Widget modification box
+    document.getElementById('cancelModify').addEventListener('click',()=>{
+        modifyBox.style.opacity = '0';
+        modifyBox.style.pointerEvents = 'none';
+    })
+    document.getElementById('acceptModify').addEventListener('click',(t)=>{
+        const widget = grid.children[DataWidget]
+        
 
+        modifyBox.style.opacity = '0';
+        modifyBox.style.pointerEvents = 'none';
+        ClearForm()
+    })
+    
     //Method that returns a random color
     function RandomColor() {
         return (colores[Math.floor(Math.random() * colores.length)])
