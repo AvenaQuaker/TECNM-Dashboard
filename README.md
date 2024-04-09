@@ -4,5 +4,9 @@
 
 ### Project Specifications 
 
-
+- HTMX
+- SCSS
+- JS Babel
+- Figma
+  
 
