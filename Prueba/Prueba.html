@@ -5,24 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prueba</title>
     <link rel="stylesheet" href="Prueba.css"/>
-</head>
-<body>
-    <!-- ProgressBar -->
-    <h1>Barra de Progreso Dinámica</h1>
-
-    <div id="myProgress">
-    <div id="myBar"></div>
-    </div>
-
-    <div class="form-box">
-            <span class="title">Widget Deletion</span>
-            <span class="subtitle">Are you sure you want to erase the current widget?</span>
-            <div class="AddWidgetOptions">
-                <button type="button" class="rethinkButton">Cancel</button>
-                <button type="button" class="cancelButton">Delete</button>
-            </div>
-    </div>
-
-    <script src="Prueba.js"></script>
-</body>
+    <head>
+        <meta charset=utf-8 />
+        <title>Morris.js Area Chart</title>
+        </head>
+        <body>
+            <h1 class="charts--headline">Wanna check the code?<br>Click "Edit this pen" in left bottom corner.</h1>
+<div class="charts--container">
+  <ul>
+    <li class="chart">
+      <h3 class="chart--subHeadline">Chart 1</h3>
+      <h2 class="chart--headline">Pie Question Would Go Here</h2>
+      <div id="pieChart">
+        <svg id="pieChartSVG">
+          <defs>
+            <filter id='pieChartInsetShadow'>
+              <feOffset dx='0' dy='0' />
+              <feGaussianBlur stdDeviation='3' result='offset-blur' />
+              <feComposite operator='out' in='SourceGraphic' in2='offset-blur' result='inverse' />
+              <feFlood flood-color='black' flood-opacity='1' result='color' />
+              <feComposite operator='in' in='color' in2='inverse' result='shadow' />
+              <feComposite operator='over' in='shadow' in2='SourceGraphic' />
+            </filter>
+            <filter id="pieChartDropShadow">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur" />
+              <feOffset in="blur" dx="0" dy="3" result="offsetBlur" />
+              <feMerge>
+                <feMergeNode />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+        </svg>
+      </div>
+    </li>
+    <li class="chart">
+      <h3 class="chart--subHeadline">Chart 2</h3>
+      <h2 class="chart--headline">Area Label Would Go Here</h2>
+      <div id="lineChart">
+        <svg id="lineChartSVG" class="lineChart--svg">
+          <defs>
+            <linearGradient id="lineChart--gradientBackgroundArea" x1="0" x2="0" y1="0" y2="1">
+              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </li>
+  </ul>
+</div>
+          <script src="Prueba.js"></script>
+        </body>
 </html>

@@ -1,0 +1,25 @@
+
+body {
+    background: #c2c2c4;
+    background-attachment: fixed;
+    background-size: cover;
+    margin:15px;
+}
+    
+.Contenedor {
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    max-width: 300px;
+    background: #f1f7fe;
+    overflow: hidden;
+    border-radius: 16px;
+    color: #010101;
+    font-family: 'Bahnschrift', 'Roboto Condensed';
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 24px 24px;
+    gap: 1rem;
+    text-align: center;
+    top: 30%;
+    left: 40%;
+}
