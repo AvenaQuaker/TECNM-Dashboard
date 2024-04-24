@@ -916,7 +916,7 @@ body {
   display: flex;
   flex-direction: row;
   -moz-column-gap: 0.1rem;
-       column-gap: 0.1rem;
+  column-gap: 0.1rem;
   width: 3.4rem;
   height: -moz-fit-content;
   height: fit-content;

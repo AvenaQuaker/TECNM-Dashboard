@@ -29,7 +29,7 @@
         document.querySelector('.overlay').style.display = 'block';
         setTimeout(function(){
             window.location.href = url;
-        }, 2000);
+        }, 10000);
     }
 
     //Method that manages the insertion of containers in the data-layout dinamic Grid
