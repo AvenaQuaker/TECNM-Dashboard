@@ -2,7 +2,7 @@
 let sesionTema = "claro";
 let sesionDepartamento = "general";
 let sesionDepfiltro = "asc";
-let sesionMain = "general";
+let sesionMain = "maincardsGeneral";
 let sesiondisplay = "flex";
 
 const animation = lottie.loadAnimation({
