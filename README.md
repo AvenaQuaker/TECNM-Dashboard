@@ -8,5 +8,7 @@
 - SCSS
 - JS Babel
 - Figma
+
+[Link del Proyecto Temporal](https://avenaquaker.github.io/TECNM-Dashboard/DashboardTEC-EIS/Dashboard.html).
   
 
