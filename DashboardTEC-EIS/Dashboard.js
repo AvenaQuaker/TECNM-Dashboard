@@ -1,5 +1,5 @@
 // Variables Globales
-let sesionTema = "claro";
+let sesionTema = "oscuro";
 let sesionDepartamento = "general";
 let sesionDepfiltro = "asc";
 let sesionMain = "maincardsGeneral";
@@ -181,6 +181,7 @@ window.addEventListener("beforeunload", () => {
         sesionDepfiltro: sesionDepfiltro,
         sesionDepartamento: sesionDepartamento,
         sesiondisplay: sesiondisplay,
+        sesionMain: sesionMain,
     };
     localStorage.setItem("sesion", JSON.stringify(data));
 });
@@ -196,6 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sesionDepfiltro = sesion.sesionDepfiltro;
         sesionDepartamento = sesion.sesionDepartamento;
         sesiondisplay = sesion.sesiondisplay;
+        sesionMain = sesion.sesionMain;
 
         intercambiarSorteo();
         intercambiarDepartamento();
