@@ -1,0 +1,16 @@
+$blanco: #ffffff;
+$grisligero:#f4f5fa;
+$azul: #2240b0;
+$grisclaro:#efeff7;
+$verdelima:#8eda8f;
+
+@import url('https://fonts.cdnfonts.com/css/euclid-circular-a');
+
+* {
+    margin: 0;
+    padding: 0;
+    transition: all 0.2ms ease-in-out;
+    font-family: 'Euclid Circular A', sans-serif;
+}
+
+

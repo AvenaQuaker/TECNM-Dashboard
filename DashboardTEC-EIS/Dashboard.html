@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="Dashboard.css" />
+        <link rel="stylesheet" href="wwwroot/lib/charts.css/dist/charts.css" />
+        <title>TEC-EIS</title>
+    </head>
+    <body>
+        <div id="Dashboard">
+            <nav transition-style="in:wipe:down">
+                <div class="titulo" onclick="PruebaN()">
+                    <label><span>TEC-</span><span>EIS</span></label>
+                </div>
+                <menu>
+                    <button class="navoption">
+                        <img src="wwwroot/Resources/Grafica.svg" />
+                        <label>Graficas</label>
+                    </button>
+                    <button class="navoption">
+                        <img src="wwwroot/Resources/Tabla.svg" />
+                        <label>Tablas</label>
+                    </button>
+                    <button class="navoption">
+                        <img src="wwwroot/Resources/Calendar.svg" />
+                        <label>Calendario</label>
+                    </button>
+                    <button class="navoption">
+                        <img src="wwwroot/Resources/Suporte.svg" />
+                        <label>Soporte</label>
+                    </button>
+                </menu>
+                <menu class="navright" transition-style="in:wipe:down">
+                    <div class="navmode">
+                        <label for="theme" class="theme">
+                            <span class="theme__toggle-wrap">
+                                <input
+                                    id="theme"
+                                    class="theme__toggle"
+                                    type="checkbox"
+                                    role="switch"
+                                    name="theme"
+                                    value="dark"
+                                    onclick="cambiarTema()" />
+                            </span>
+                        </label>
+                    </div>
+                    <div class="navuser">
+                        <label>Usuario</label>
+                        <img src="wwwroot/Resources/User.svg" />
+                    </div>
+                </menu>
+            </nav>
+            <section transition-style="in:wipe:right">Filtros</section>
+            <aside transition-style="in:wipe:right">
+                <h1>Carreras</h1>
+                <button onclick="cambiarSorteo()">
+                    <img
+                        src="wwwroot/Resources/SortearDebajo.svg"
+                        id="imgsorteo" />
+                </button>
+                <div class="deplista" id="deplista">
+                    <article id="general">
+                        <div>
+                            <img src="wwwroot/Resources/Home.svg" />
+                        </div>
+                        <label>General </label>
+                    </article>
+                    <article id="arquitectura">
+                        <div>
+                            <img src="wwwroot/Resources/Arqui.svg" />
+                        </div>
+                        <label>Arquitectura</label>
+                    </article>
+                    <article id="ingcivil">
+                        <div>
+                            <img src="wwwroot/Resources/Ingcivil.svg" />
+                        </div>
+                        <label>Ingenieria Civil</label>
+                    </article>
+                    <article id="ingelectronica">
+                        <div>
+                            <img src="wwwroot/Resources/Ingelec.svg" />
+                        </div>
+                        <label>Ingenieria Electronica</label>
+                    </article>
+                    <article id="ingelectrica">
+                        <div>
+                            <img src="wwwroot/Resources/Ingelectrica.svg" />
+                        </div>
+                        <label>Ingenieria Electrica</label>
+                    </article>
+                    <article id="ingindustrial">
+                        <div>
+                            <img src="wwwroot/Resources/Ingindus.svg" />
+                        </div>
+                        <label>Ingenieria Industrial</label>
+                    </article>
+                    <article id="ingmecanica">
+                        <div>
+                            <img src="wwwroot/Resources/Ingmecanica.svg" />
+                        </div>
+                        <label>Ingenieria Mecanica</label>
+                    </article>
+                    <article id="ingmecatronica">
+                        <div>
+                            <img src="wwwroot/Resources/Ingmeca.svg" />
+                        </div>
+                        <label>Ingenieria Mecatronica</label>
+                    </article>
+                    <article id="ingsistemas">
+                        <div>
+                            <img src="wwwroot/Resources/ingsis.svg" />
+                        </div>
+                        <label>Ingenieria en Sistemas Computacionales</label>
+                    </article>
+                    <article id="gestion">
+                        <div>
+                            <img src="wwwroot/Resources/gest.svg" />
+                        </div>
+                        <label>Ingenieria en Gestion Empresarial</label>
+                    </article>
+                    <article id="administracion">
+                        <div>
+                            <img src="wwwroot/Resources/adm.svg" />
+                        </div>
+                        <label>Ingenieria en Administracion</label>
+                    </article>
+                    <article id="contabilidad">
+                        <div>
+                            <img src="wwwroot/Resources/conta.svg" />
+                        </div>
+                        <label>Contador Publico</label>
+                    </article>
+                </div>
+            </aside>
+            <main id="main" transition-style="in:wipe:left">
+                <div class="maintop">
+                    <h1>Contenido principal</h1>
+                    <button onclick="cambiarDisplay()">
+                        <img src="wwwroot/Resources/Barras.svg" id="imggrid" />
+                    </button>
+                </div>
+                <section class="maincards" id="maincardsGeneral">
+                    <article id="general1"></article>
+                    <article id="general2"></article>
+                    <article id="general3"></article>
+                    <article id="general4"></article>
+                </section>
+                <section class="maincards" id="maincards1">
+                    <strong
+                        >Informacion pendiente para la carrera de Arquitectura
+                    </strong>
+                </section>
+                <section class="maincards" id="maincards2">
+                    <strong
+                        >Informacion pendiente para la carrera de Ingenieria
+                        Civil</strong
+                    >
+                </section>
+                <section class="maincards" id="maincards3">
+                    <strong
+                        >Informacion pendiente para la carrera de Ingenieria
+                        Electronica
+                    </strong>
+                </section>
+                <section class="maincards" id="maincards4">
+                    <strong
+                        >Informacion pendiente para la carrera de Ingenieria
+                        Electrica</strong
+                    >
+                </section>
+                <section class="maincards" id="maincards5">
+                    <strong
+                        >Informacion pendiente para la carrera de Ingenieria
+                        Industrial</strong
+                    >
+                </section>
+                <section class="maincards" id="maincards6">
+                    <strong
+                        >Informacion pendiente para la carrera de Ingenieria
+                        Mecanica</strong
+                    >
+                </section>
+                <section class="maincards" id="maincards7">
+                    <strong
+                        >Informacion pendiente para la carrera de Ingenieria
+                        Mecatronica</strong
+                    >
+                </section>
+                <section class="maincards" id="maincards8">
+                    <strong
+                        >Informacion pendiente para la carrera de Ingenieria en
+                        Sistemas Computacionales</strong
+                    >
+                </section>
+                <section class="maincards" id="maincards9">
+                    <strong
+                        >Informacion pendiente para la carrera de Gestion
+                        empresarial</strong
+                    >
+                </section>
+                <section class="maincards" id="maincards10">
+                    <strong
+                        >Informacion pendiente para la carrera de
+                        Administracion</strong
+                    >
+                </section>
+                <section class="maincards" id="maincards11">
+                    <strong
+                        >Informacion pendiente para la carrera de
+                        Contaduria</strong
+                    >
+                </section>
+            </main>
+        </div>
+        <section id="toastnotf"></section>
+        <figure id="Cargando"></figure>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+        <script src="Graficas.js"></script>
+        <script src="Dashboard.js"></script>
+    </body>
+</html>

@@ -1,0 +1,905 @@
+@import url("https://fonts.cdnfonts.com/css/euclid-circular-a");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Euclid Circular A", sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --blanco: #121212;
+  --grisligero: #2f2f2f;
+  --azul: #3d55f6;
+  --azulselect: #2240b0;
+  --verdelima: #8eda8f;
+  --verdeselect: #8ddbff;
+  --depselect: #02a762;
+  --gris: #d9d9d9;
+  --grishover: #bebebe;
+  --negro: white;
+  --negroA: #111827;
+  --grisA: #1f2937;
+  --grisClaroA: #9ca3af;
+  --grisOscuro: #212121;
+  --filtro: invert(0.5);
+  --filtroselect: invert(0);
+}
+
+#Dashboard {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-areas: "nav nav " "section section" "aside main";
+  grid-template-columns: 0.2fr 0.8fr;
+  grid-template-rows: 0.09fr 0.1fr 1fr;
+  gap: 0.5rem;
+  justify-content: center;
+  background: var(--grisligero);
+  transition: background-color 0.7s ease-in-out;
+}
+#Dashboard nav {
+  grid-area: nav;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--blanco);
+  padding: 1rem;
+  align-items: center;
+  gap: 2.5dvw;
+  transition: background-color 0.7s ease-in-out;
+}
+#Dashboard nav .titulo {
+  transition: transform 0.3s ease-in-out, color 0.7s ease-in-out;
+}
+#Dashboard nav .titulo label {
+  font-size: 1.5rem;
+  font-weight: 1000;
+  transition: color 0.7s ease-in-out;
+}
+#Dashboard nav .titulo label :first-child {
+  color: var(--azul);
+}
+#Dashboard nav .titulo label :last-child {
+  color: var(--verdelima);
+}
+#Dashboard nav .titulo:hover {
+  transform: rotate3d(1, 0, 0, 360deg) scale(1.1);
+}
+#Dashboard nav menu {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+#Dashboard nav menu .navoption {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: none;
+  background: inherit;
+  gap: 0.5dvw;
+  transition: transform 0.3s ease-in-out;
+}
+#Dashboard nav menu .navoption label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gris);
+  transition: transform 0.3s ease-in-out, color 0.7s ease-in-out;
+}
+#Dashboard nav menu .navoption label:hover {
+  color: var(--negro);
+}
+#Dashboard nav menu .navoption img {
+  cursor: pointer;
+  filter: hue-rotate(180deg) saturate(50%);
+  width: 1.5rem;
+}
+#Dashboard nav menu .navoption:hover {
+  transform: rotate3d(1, 0, 0, 30deg) scale(1.1);
+}
+#Dashboard nav .navright {
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+  position: absolute;
+  right: 1%;
+}
+#Dashboard nav .navright .navmode .theme {
+  display: flex;
+  align-items: center;
+  -webkit-tap-highlight-color: transparent;
+}
+#Dashboard nav .navright .navmode .theme__toggle {
+  z-index: 1;
+}
+#Dashboard nav .navright .navmode .theme__label, #Dashboard nav .navright .navmode .theme__toggle, #Dashboard nav .navright .navmode .theme__toggle-wrap {
+  position: relative;
+}
+#Dashboard nav .navright .navmode .theme__toggle, #Dashboard nav .navright .navmode .theme__toggle:before {
+  display: block;
+}
+#Dashboard nav .navright .navmode .theme__toggle {
+  background-color: hsl(48, 90%, 85%);
+  border-radius: 25%/50%;
+  box-shadow: 0 0 0 0.125em var(--primaryT);
+  padding: 0.25em;
+  width: 5em;
+  height: 2.5em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  transition: background-color var(--transDur) ease-in-out, box-shadow 0.15s ease-in-out, transform var(--transDur) ease-in-out;
+}
+#Dashboard nav .navright .navmode .theme__toggle:before {
+  background-color: hsl(48, 90%, 55%);
+  border-radius: 50%;
+  content: "";
+  width: 2em;
+  height: 2em;
+  transition: 0.3s;
+}
+#Dashboard nav .navright .navmode .theme__toggle:focus {
+  box-shadow: 0 0 0 0.125em var(--primary);
+  outline: transparent;
+}
+#Dashboard nav .navright .navmode .theme__toggle:checked {
+  background-color: hsl(198, 90%, 15%);
+}
+#Dashboard nav .navright .navmode .theme__toggle:checked:before {
+  transform: translateX(2.5em);
+}
+#Dashboard nav .navright .navmode .theme__toggle:checked:before {
+  background-color: hsl(198, 90%, 55%);
+}
+@supports selector(:focus-visible) {
+  #Dashboard nav .navright .navmode .theme__toggle:focus {
+    box-shadow: 0 0 0 0.125em var(--primaryT);
+  }
+  #Dashboard nav .navright .navmode .theme__toggle:focus-visible {
+    box-shadow: 0 0 0 0.125em var(--primary);
+  }
+}
+#Dashboard nav .navright .navuser {
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+  gap: 0.2rem;
+}
+#Dashboard nav .navright .navuser label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gris);
+  transition: transform 0.3s ease-in-out, color 0.7s ease-in-out;
+}
+#Dashboard nav .navright .navuser img {
+  width: 3.5rem;
+  -o-object-fit: fill;
+     object-fit: fill;
+  transition: transform 0.3s ease-in-out;
+}
+#Dashboard nav .navright .navuser :hover {
+  transform: rotate3d(1, 0, 0, 45deg) scale(1.1);
+}
+#Dashboard section {
+  grid-area: section;
+  background-color: var(--grisligero);
+  transition: background-color 0.7s ease-in-out;
+}
+#Dashboard aside {
+  grid-area: aside;
+  background-color: var(--blanco);
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.1fr 1fr;
+  grid-template-areas: "label button" "lista lista";
+  row-gap: 1.5rem;
+  overflow: auto;
+  transition: background-color 0.7s ease-in-out;
+}
+#Dashboard aside::-webkit-scrollbar {
+  display: none;
+}
+#Dashboard aside h1 {
+  grid-area: label;
+  font-size: 1.5dvw;
+  font-weight: 600;
+  color: var(--gris);
+  transition: translate 0.3s ease-in-out, color 0.7s ease-in-out;
+}
+#Dashboard aside h1:hover {
+  translate: 0 -0.5rem;
+}
+#Dashboard aside button {
+  grid-area: button;
+  background: transparent;
+  border: none;
+  width: 2.5vw;
+  justify-self: end;
+  align-self: start;
+  transition: all 0.1s ease;
+}
+#Dashboard aside button img {
+  width: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  transition: transform 0.3s ease-in-out;
+}
+#Dashboard aside button:active,
+#Dashboard aside button :hover {
+  transform: scale(1.1);
+}
+#Dashboard aside .deplista {
+  grid-area: lista;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+  place-self: start;
+}
+#Dashboard aside .deplista article {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: -moz-max-content;
+  height: max-content;
+  background: var(--grisligero);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.7s ease-in-out, transform 0.2s ease-in-out;
+  padding: 1dvw;
+  gap: 1dvw;
+}
+#Dashboard aside .deplista article div {
+  display: flex;
+  background: var(--grisOscuro);
+  width: 2.5dvw;
+  height: 2.5dvw;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.7s ease-in-out, transform 0.2s ease-in-out;
+}
+#Dashboard aside .deplista article div img {
+  width: 70%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  filter: var(--filtro);
+  transition: filter 0.7s ease-in-out;
+}
+#Dashboard aside .deplista article label {
+  color: var(--gris);
+  width: 80%;
+  font-size: 1dvw;
+  font-weight: 500;
+  transition: transform 0.3s ease-in-out, color 0.7s ease-in-out;
+}
+#Dashboard aside .deplista article:hover {
+  transform: scale(1.1, 1.1) rotateY(20deg);
+  background: var(--azulselect);
+}
+#Dashboard aside .deplista article:hover label {
+  color: var(--negro);
+}
+#Dashboard aside .deplista article:hover div {
+  background: var(--verdeselect);
+}
+#Dashboard aside .deplista article:hover div img {
+  filter: none;
+}
+#Dashboard aside .deplista .depselected {
+  background: var(--depselect);
+}
+#Dashboard aside .deplista .depselected div {
+  background: var(--verdelima);
+}
+#Dashboard aside .deplista .depselected div img {
+  filter: var(--filtroselect);
+}
+#Dashboard aside .deplista .depselected label {
+  color: var(--negro);
+}
+#Dashboard aside .deplista:hover > article:not(:hover) {
+  transform: scale(0.9, 0.9);
+}
+#Dashboard main {
+  grid-area: main;
+  background-color: var(--blanco);
+  border-radius: 10px;
+  transition: background-color 0.7s ease-in-out;
+  padding: 1.5rem 3rem;
+  overflow: auto;
+  position: sticky;
+}
+#Dashboard main::-webkit-scrollbar {
+  display: none;
+}
+#Dashboard main .maintop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3dvh;
+}
+#Dashboard main .maintop h1 {
+  font-size: 1.5dvw;
+  font-weight: 600;
+  color: var(--gris);
+  transition: translate 0.3s ease-in-out, color 0.7s ease-in-out;
+}
+#Dashboard main .maintop h1:hover {
+  translate: 0 -0.5rem;
+}
+#Dashboard main .maintop button {
+  background: transparent;
+  border: none;
+  width: 2.5vw;
+  justify-self: end;
+  align-self: start;
+  transition: transform 0.3s ease-in-out;
+}
+#Dashboard main .maintop button img {
+  width: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  filter: var(--filtro);
+  transition: transform 0.3s ease-in-out, filter 0.7s ease-in-out;
+}
+#Dashboard main .maintop button:active,
+#Dashboard main .maintop button :hover {
+  transform: scale(1.1);
+}
+#Dashboard main .maincards {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  gap: 2dvw;
+}
+#Dashboard main .maincards strong {
+  color: var(--grisClaroA);
+  transition: background-color 0.7s ease-in-out, transform 0.2s ease-in-out, color 0.7s ease-in-out;
+}
+#Dashboard main .maincards article {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+  height: -moz-max-content;
+  height: max-content;
+  background: var(--grisligero);
+  border-radius: 10px;
+  transition: background-color 0.7s ease-in-out, transform 0.2s ease-in-out, color 0.7s ease-in-out;
+  padding: 1dvw;
+  color: var(--negro);
+}
+#Dashboard main .maincards article strong {
+  color: var(--gris);
+}
+#Dashboard main .maincards article table {
+  place-self: center;
+}
+#Dashboard main .maincards article table tr {
+  transition: background-color 0.2s ease-in-out, color 0.3s ease-in-out;
+}
+#Dashboard main .maincards article table tr:hover {
+  background-color: var(--grishover);
+}
+#Dashboard main .maincards article table tr td {
+  font-size: 1dvw;
+}
+#Dashboard main .maincards article table tr th {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8dvw;
+  font-weight: 350;
+}
+#Dashboard main .maincards article table caption {
+  color: var(--negro);
+  font-size: clamp(0.8rem, 1.5vw, 1.5rem);
+  font-weight: 500;
+  margin-bottom: 3dvh;
+  transition: color 0.7s ease-in-out;
+}
+#Dashboard main .maincards article table .tooltip {
+  pointer-events: none;
+}
+#Dashboard main .maincards article table.column {
+  --aspect-ratio: 21 / 7;
+}
+#Dashboard main .maincards article table.bar {
+  --aspect-ratio: 12/ 5;
+}
+#Dashboard main .maincards article table .highlighted {
+  animation: highlighted-bar 2s linear infinite;
+}
+@keyframes highlighted-bar {
+  0% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: 0 0 1px 0 black, 0 0 20px 5px darkgrey;
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+#Dashboard main .maincards article ul {
+  display: flex;
+  justify-content: center;
+  border: none;
+  gap: 0.5dvw;
+  transition: background-color 0.7s ease-in-out, color 0.7s ease-in-out;
+}
+#Dashboard main .maincards article ul li {
+  font-size: clamp(0.7rem, 1vw, 1vw);
+  font-weight: 300;
+  color: var(--gris);
+  transition: background-color 0.7s ease-in-out, color 0.7s ease-in-out;
+}
+#Dashboard main .maincards article ul li::before {
+  width: 1dvw;
+  height: 1dvw;
+  border-radius: 3px;
+}
+#Dashboard main .maincards article .listotal {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  text-align: center;
+}
+#Dashboard main .maincards article .listotal li {
+  color: var(--gris);
+  padding: 0.5dvw;
+}
+#Dashboard main .maingrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
+  gap: 1rem;
+  align-items: center;
+  background: transparent;
+}
+#Dashboard main .maingrid article {
+  background: var(--grisligero);
+  border-radius: 10px;
+  padding: 1dvw;
+}
+#Dashboard main .maingrid article table {
+  place-self: center;
+}
+#Dashboard main .maingrid article table tr {
+  transition: background-color 0.2s ease-in-out, color 0.3s ease-in-out;
+}
+#Dashboard main .maingrid article table tr:hover {
+  background-color: var(--grishover);
+}
+#Dashboard main .maingrid article table tr td {
+  font-size: 0.8dvw;
+}
+#Dashboard main .maingrid article table tr th {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8dvw;
+  font-weight: 350;
+}
+#Dashboard main .maingrid article table caption {
+  color: var(--negro);
+  font-size: clamp(0.8rem, 1.2vw, 1.5rem);
+  font-weight: 500;
+  margin-bottom: 3dvh;
+  transition: color 0.7s ease-in-out;
+}
+#Dashboard main .maingrid article table .tooltip {
+  pointer-events: none;
+}
+#Dashboard main .maingrid article table.column {
+  --aspect-ratio: 21 / 9;
+}
+#Dashboard main .maingrid article table.bar {
+  --aspect-ratio: 11 / 8;
+}
+#Dashboard main .maingrid article table .highlighted {
+  animation: highlighted-bar 2s linear infinite;
+}
+@keyframes highlighted-bar {
+  0% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: 0 0 1px 0 black, 0 0 20px 5px darkgrey;
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+#Dashboard main .maingrid article ul {
+  gap: 0.3dvw;
+}
+#Dashboard main .maingrid article ul li {
+  font-size: clamp(0.5rem, 0.8vw, 0.8vw);
+  font-weight: 300;
+}
+#Dashboard main .maingrid article ul li::before {
+  width: 0.9dvw;
+  height: 0.9dvw;
+  border-radius: 3px;
+}
+#Dashboard main .maingrid article .listotal {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  text-align: center;
+}
+#Dashboard main .maingrid article .listotal li {
+  color: var(--gris);
+  padding: 0.3dvw;
+}
+
+#toastnotf {
+  position: fixed;
+  bottom: 1%;
+  right: 1%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  gap: 10px;
+  height: -moz-max-content;
+  height: max-content;
+  z-index: 3;
+  transition: background-color 0.7s ease-in-out;
+}
+#toastnotf dialog {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem;
+  width: -moz-max-content;
+  width: max-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: var(--negroA);
+  border: none;
+  border-radius: 10px;
+  animation: aparecer 1s ease;
+}
+#toastnotf dialog figure {
+  display: flex;
+  background: var(--grisA);
+  width: 3rem;
+  height: 3rem;
+  justify-content: center;
+  border-radius: 5px;
+}
+#toastnotf dialog figure img {
+  width: 80%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+#toastnotf dialog summary {
+  margin-left: 1rem;
+}
+#toastnotf dialog summary h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--negro);
+}
+#toastnotf dialog summary label {
+  font-size: 0.8rem;
+  color: var(--grisClaroA);
+}
+
+#Cargando {
+  position: fixed;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(20rem, 30vw, 30rem);
+  opacity: 0;
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+    transform: rotate3d(2, -1, -1, -0.2turn);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate3d(0);
+  }
+}
+@keyframes desaparecer {
+  0% {
+    opacity: 1;
+    transform: rotate3d(0);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate3d(-2, 1, 1, 0.3turn);
+  }
+}
+@keyframes iniciocargando {
+  0% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes terminocargando {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+@media (max-width: 850px) {
+  #Dashboard {
+    grid-template-areas: "nav nav" "section section" "aside aside" "main main";
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.08fr 0.1fr 0.1fr 1fr;
+  }
+  #Dashboard nav {
+    overflow: hidden;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  #Dashboard nav label {
+    font-size: 1.3rem;
+    font-weight: 1000;
+  }
+  #Dashboard nav label :first-child {
+    color: var(--azul);
+  }
+  #Dashboard nav label :last-child {
+    color: var(--verdelima);
+  }
+  #Dashboard nav menu {
+    gap: 0.7rem;
+  }
+  #Dashboard nav menu .navoption {
+    flex-direction: column;
+  }
+  #Dashboard nav menu .navoption img {
+    width: 1.2rem;
+  }
+  #Dashboard nav menu .navoption label {
+    font-size: clamp(0.5rem, 1vw, 1rem);
+  }
+  #Dashboard nav .navright {
+    gap: 0.3rem;
+  }
+  #Dashboard nav .navright .navmode {
+    display: none;
+  }
+  #Dashboard nav .navright .navuser label {
+    display: none;
+  }
+  #Dashboard nav .navright .navuser img {
+    width: 3rem;
+    -o-object-fit: fill;
+       object-fit: fill;
+  }
+  #Dashboard aside {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    height: -moz-max-content;
+    height: max-content;
+    row-gap: 0.5rem;
+  }
+  #Dashboard aside h1 {
+    font-size: 0.8rem;
+    place-self: center;
+    position: sticky;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #Dashboard aside h1:hover {
+    translate: 0 -0.3rem;
+  }
+  #Dashboard aside button {
+    display: none;
+  }
+  #Dashboard aside button img {
+    width: 100%;
+    -o-object-fit: fill;
+       object-fit: fill;
+    transition: transform 0.3s ease-in-out;
+  }
+  #Dashboard aside button:active {
+    transform: scale(1.1);
+  }
+  #Dashboard aside .deplista {
+    flex-direction: row !important;
+    gap: 0.8rem;
+  }
+  #Dashboard aside .deplista article {
+    width: -moz-max-content;
+    width: max-content;
+    height: 4dvh;
+    padding: 0.5rem;
+    gap: 1dvw;
+    white-space: nowrap;
+  }
+  #Dashboard aside .deplista article div {
+    width: 2dvh;
+    height: 2dvh;
+  }
+  #Dashboard aside .deplista article div img {
+    width: 70%;
+    -o-object-fit: fill;
+       object-fit: fill;
+  }
+  #Dashboard aside .deplista article label {
+    font-size: clamp(0.5rem, 0.7vw, 0.7rem);
+  }
+  #Dashboard main {
+    display: flex;
+    flex-direction: column;
+    height: -moz-fit-content;
+    height: fit-content;
+    border-radius: 0px;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    padding: 2rem 3dvw;
+  }
+  #Dashboard main .maintop {
+    margin-bottom: 3dvh;
+    justify-content: center;
+  }
+  #Dashboard main .maintop h1 {
+    font-size: 1rem;
+  }
+  #Dashboard main .maintop button {
+    display: none;
+  }
+  #Dashboard main .maincards {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    gap: 2dvw;
+  }
+  #Dashboard main .maincards strong {
+    font-size: 0.7rem;
+  }
+  #Dashboard main .maincards article {
+    height: -moz-max-content;
+    height: max-content;
+    padding: 1dvw;
+  }
+  #Dashboard main .maincards article strong {
+    font-size: 2dvw;
+  }
+  #Dashboard main .maincards article table {
+    place-self: center;
+  }
+  #Dashboard main .maincards article table caption {
+    font-size: 0.8rem;
+  }
+  #Dashboard main .maincards article table tr td {
+    font-size: 2dvw;
+  }
+  #Dashboard main .maincards article table.column {
+    --aspect-ratio: 21 / 7;
+  }
+  #Dashboard main .maincards article table.column tbody td {
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    box-shadow: none;
+  }
+  #Dashboard main .maincards article table th {
+    font-size: 0.6rem !important;
+  }
+  #Dashboard main .maincards article table .highlighted {
+    animation: highlighted-bar 2s linear infinite;
+  }
+  @keyframes highlighted-bar {
+    0% {
+      box-shadow: none;
+    }
+    50% {
+      box-shadow: 0 0 1px 0 black, 0 0 20px 5px darkgrey;
+    }
+    100% {
+      box-shadow: none;
+    }
+  }
+  #Dashboard main .maincards article ul {
+    margin-top: 1rem;
+  }
+  #Dashboard main .maincards article ul li {
+    font-size: clamp(2dvw, 2vw, 3vw);
+  }
+  #Dashboard main .maincards article .legend {
+    display: none;
+  }
+  #toastnotf {
+    height: -moz-max-content;
+    height: max-content;
+  }
+  #toastnotf dialog {
+    padding: 0.5rem;
+    width: -moz-max-content;
+    width: max-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  #toastnotf dialog figure {
+    width: 2rem;
+    height: 2rem;
+  }
+  #toastnotf dialog figure img {
+    width: 80%;
+    -o-object-fit: fill;
+       object-fit: fill;
+  }
+  #toastnotf dialog summary {
+    margin-left: 0.5rem;
+  }
+  #toastnotf dialog summary h3 {
+    font-size: 0.7rem;
+  }
+  #toastnotf dialog summary label {
+    font-size: 0.6rem;
+  }
+}
+@keyframes RevelarSeccion {
+  from {
+    -webkit-clip-path: inset(0 0 100% 0);
+            clip-path: inset(0 0 100% 0);
+  }
+  to {
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+}
+[transition-style=RevelarSeccion] {
+  animation: 4s cubic-bezier(0.25, 1, 0.3, 1) RevelarSeccion;
+}
+
+@keyframes wipe-in-down {
+  from {
+    -webkit-clip-path: inset(0 0 100% 0);
+            clip-path: inset(0 0 100% 0);
+  }
+  to {
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+}
+[transition-style="in:wipe:down"] {
+  animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-down;
+}
+
+@keyframes wipe-in-right {
+  from {
+    -webkit-clip-path: inset(0 100% 0 0);
+            clip-path: inset(0 100% 0 0);
+  }
+  to {
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+}
+[transition-style="in:wipe:right"] {
+  animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-right;
+}
+
+@keyframes wipe-in-left {
+  from {
+    -webkit-clip-path: inset(0 0 0 100%);
+            clip-path: inset(0 0 0 100%);
+  }
+  to {
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+}
+[transition-style="in:wipe:left"] {
+  animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-left;
+}/*# sourceMappingURL=Dashboard.css.map */

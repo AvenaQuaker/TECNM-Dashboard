@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WelcomePage</title>
+    <link rel="stylesheet" href="Dashboard.css">
+</head>
+<body>
+<!-- Container placed as body used as background for the dashboard -->
+<div class="dashboard-background">
+
+    <!-- Main capsule container that controls all topbar elements -->
+    <div class="topBar">
+        <div class="leftTopBar">
+            <div class="menu-image" onclick="Loading('Login.html')"></div>
+            <div class="dashboard">Dashboard</div>
+            <div class="SearchBox">
+                <input class="search" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="UserBox">
+            <div class="moon"></div>
+            <div class="bell"></div>
+            <div class="line-3"></div>
+            <div class="username-image"></div>
+            <div class="username">Username</div>
+        </div>
+    </div>
+
+    <!-- Main capsule container that controlls all the dashboard capsule containers -->
+    <div class="botContent">
+
+        <!-- Capsule container that holds all the dashboard pages navigation -->
+        <div class="navbar-layout">
+            <div id='navImg1' class="navImg">
+                <span class="tooltip">Home</span>
+                <img src="Resources/Home.png">
+            </div>
+            <div id='navImg2'  class="navImg">
+                <span class="tooltip">Charts</span>
+                <img src="Resources/Circle Chart.png">
+            </div>
+            <div id='navImg3' class="navImg">
+                <span class="tooltip">Stadistics</span>
+                <img src="Resources/Statistics.png">
+            </div>
+            <div id='navImg4' class="navImg">
+                <span class="tooltip">Calendar</span>
+                <img src="Resources/Calendar.png">
+            </div>
+            <div id='navImg5' class="navImg">
+                <span class="tooltip">Settings</span>
+                <img src="Resources/Gear.png">
+            </div>
+        </div>
+
+        <!-- Capsule container that shows all the data-page information -->
+        <div  id="data-layout"class="data-layout">
+            
+
+
+<!-- aca ba la info -->
+
+
+
+
+        </div>
+        <div class="GmailBox">
+            <div class="messages">
+                Messages
+            </div>
+        <div class="gmail-layout">
+            
+            <div class="msgUser">
+            </div>
+            <div class="Message">
+                <div class="nameStar">
+                <div class="msgName">
+                    Amanda
+                </div>
+                <div class="christmas-star-1">
+                </div>
+                </div>
+                <span class="msgDesc">
+                Insert a full description of the user message above here, just is just an example on Figma
+                </span>
+                <span class="msgDate">
+                    Dec, 12
+                </span>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Loading container overlay -->
+    <div class="overlay" id="overlay">
+        
+        <div class="card" id="card">
+            <div class="boxes">
+                <div class="boxer">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="boxer">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="boxer">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="boxer">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <span id="Loading">Loading...</span>
+        </div>
+    </div>
+
+<!-- <script src="Dashboard.js"></script> -->
+</body>
+</html>

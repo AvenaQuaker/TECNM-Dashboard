@@ -1,0 +1,220 @@
+@import url("https://fonts.cdnfonts.com/css/euclid-circular-a");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Euclid Circular A", sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top;
+    background-image: url(/Resources/Forest.jpg);
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2dvw;
+    padding-bottom: 5dvh;
+    position: relative;
+    width: 20rem;
+    height: -moz-max-content;
+    height: max-content;
+    background: inherit;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1;
+}
+main span {
+    background-image: url(/Resources/User.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    -o-object-fit: fill;
+    object-fit: fill;
+    width: 8rem;
+    height: 8rem;
+}
+main label {
+    font-size: 1.5rem;
+    color: whitesmoke;
+    font-weight: 300;
+}
+main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+main form input {
+    border-radius: 3px;
+    width: 13rem;
+    height: 3dvh;
+    opacity: 0.4;
+    border: none;
+    text-align: center;
+    outline: none;
+}
+main form input:focus {
+    opacity: 0.8;
+}
+main form button {
+    border-radius: 5px;
+    width: 6rem;
+    height: 3dvh;
+    border: none;
+    opacity: 0.7;
+    text-align: center;
+    font-weight: 600;
+}
+main form button:hover {
+    opacity: 1;
+    filter: drop-shadow(0 0 0.3rem rgb(207, 233, 241));
+}
+main form button:focus {
+    opacity: 1;
+    transform: scale(1.2);
+}
+main::after {
+    content: "";
+    height: 100%;
+    background: inherit;
+    position: absolute;
+    left: -25px;
+    right: 0;
+    top: -25px;
+    bottom: 0;
+    box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.05);
+    filter: blur(10px);
+    z-index: -1;
+}
+
+#toastnotf {
+    position: fixed;
+    bottom: 1%;
+    right: 1%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 10px;
+    height: -moz-max-content;
+    height: max-content;
+    z-index: 3;
+}
+#toastnotf dialog {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    width: -moz-max-content;
+    width: max-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    background: #111827;
+    border: none;
+    border-radius: 10px;
+    animation: aparecer 1s ease;
+}
+#toastnotf dialog figure {
+    display: flex;
+    background: #1f2937;
+    width: 3rem;
+    height: 3rem;
+    justify-content: center;
+    border-radius: 5px;
+}
+#toastnotf dialog figure img {
+    width: 80%;
+    -o-object-fit: fill;
+    object-fit: fill;
+}
+#toastnotf dialog summary {
+    margin-left: 1rem;
+}
+#toastnotf dialog summary h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: whitesmoke;
+}
+#toastnotf dialog summary label {
+    font-size: 0.8rem;
+    color: #9ca3af;
+}
+#toastnotf dialog button {
+    width: 3dvh;
+    height: 3dvh;
+    background: transparent;
+    border: none;
+}
+#toastnotf dialog button img {
+    filter: invert(0.5);
+    background: url(/Resources/Cancel.svg);
+    width: 80%;
+    -o-object-fit: fill;
+    object-fit: fill;
+}
+
+#Cargando {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: clamp(10rem, 20vw, 20rem);
+    opacity: 0;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        transform: rotate3d(2, -1, -1, -0.2turn);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate3d(0);
+    }
+}
+@keyframes desaparecer {
+    0% {
+        opacity: 1;
+        transform: rotate3d(0);
+    }
+    100% {
+        opacity: 0;
+        transform: rotate3d(-2, 1, 1, 0.3turn);
+    }
+}
+@keyframes iniciocargando {
+    0% {
+        display: block;
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate3d(0.9);
+    }
+}
+@keyframes terminocargando {
+    0% {
+        opacity: 1;
+        transform: rotate3d(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.1);
+        display: none;
+    }
+} /*# sourceMappingURL=Login.css.map */
