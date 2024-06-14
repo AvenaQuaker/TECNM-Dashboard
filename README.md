@@ -9,6 +9,6 @@
 - JS Babel
 - Figma
 
-[Link del Proyecto Temporal](https://github.com/AvenaQuaker/TECNM-Dashboard/DashboardTEC-EIS/Dashboard.html).
+[Link del Proyecto Temporal](https://avenaquaker.github.io/TECNM-Dashboard/DashboardTEC-EIS/Dashboard.html).
   
 
