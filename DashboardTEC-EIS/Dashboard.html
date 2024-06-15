@@ -53,7 +53,50 @@
                     </div>
                 </menu>
             </nav>
-            <section transition-style="in:wipe:right">Filtros</section>
+            <section transition-style="in:wipe:right">
+                <h1>Filtros</h1>
+                <div class="filtrosbox">
+                    <label>Anual</label>
+                    <select id="anual">
+                        <option value="SinFiltro">Sin Filtro</option>
+                        <option value="AnoActual">2024</option>
+                        <option value="AnoAnterior">2023</option>
+                    </select>
+                </div>
+                <div class="filtrosbox">
+                    <label>Mensual</label>
+                    <select id="meses">
+                        <option value="SinFiltro">Sin Filtro</option>
+                        <option value="enero">Enero</option>
+                        <option value="febrero">Febrero</option>
+                        <option value="marzo">Marzo</option>
+                        <option value="abril">Abril</option>
+                        <option value="mayo">Mayo</option>
+                        <option value="junio">Junio</option>
+                        <option value="julio">Julio</option>
+                        <option value="agosto">Agosto</option>
+                        <option value="septiembre">Septiembre</option>
+                        <option value="octubre">Octubre</option>
+                        <option value="noviembre">Noviembre</option>
+                        <option value="diciembre">Diciembre</option>
+                    </select>
+                </div>
+                <div class="filtrosbox">
+                    <label>Genero</label>
+                    <select id="genero">
+                        <option value="Sin Filtro">Sin Filtro</option>
+                        <option value="Hombre">Hombre</option>
+                        <option value="Mujer">Mujer</option>
+                        <option value="Objeto">Objeto</option>
+                    </select>
+                </div>
+                <div class="filtrosbox">
+                    <label>Filtro Extra</label>
+                    <select>
+                        <option value="Sin Filtro">Sin Filtro</option>
+                    </select>
+                </div>
+            </section>
             <aside transition-style="in:wipe:right">
                 <h1>Carreras</h1>
                 <button onclick="cambiarSorteo()">

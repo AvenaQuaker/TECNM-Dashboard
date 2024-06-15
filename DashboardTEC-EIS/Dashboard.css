@@ -183,6 +183,39 @@
   grid-area: section;
   background-color: var(--grisligero);
   transition: background-color 0.7s ease-in-out;
+  padding: 0.5dvw 1dvw;
+  display: flex;
+  flex-direction: row;
+  gap: 2dvw;
+  place-items: center;
+}
+#Dashboard section h1 {
+  color: var(--gris);
+  font-weight: 600;
+  font-size: 1.4dvw;
+  transition: color 0.7s ease-in-out;
+}
+#Dashboard section .filtrosbox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5dvh;
+  color: var(--gris);
+  transition: color 0.7s ease-in-out;
+}
+#Dashboard section .filtrosbox label {
+  font-weight: 500;
+  font-size: 1dvw;
+}
+#Dashboard section .filtrosbox select {
+  width: 15dvw;
+  border: none;
+  border-radius: 3px;
+  height: 3.5dvh;
+  background-color: var(--grisOscuro);
+  transition: color 0.7s ease-in-out, background-color 0.7s ease-in-out;
+  color: var(--gris);
+  outline: none;
+  font-size: 0.8dvw;
 }
 #Dashboard aside {
   grid-area: aside;
@@ -206,6 +239,7 @@
   font-weight: 600;
   color: var(--gris);
   transition: translate 0.3s ease-in-out, color 0.7s ease-in-out;
+  position: sticky;
 }
 #Dashboard aside h1:hover {
   translate: 0 -0.5rem;
@@ -310,7 +344,6 @@
   transition: background-color 0.7s ease-in-out;
   padding: 1.5rem 3rem;
   overflow: auto;
-  position: sticky;
 }
 #Dashboard main::-webkit-scrollbar {
   display: none;
@@ -367,6 +400,7 @@
   flex-direction: column;
   height: -moz-max-content;
   height: max-content;
+  width: 100%;
   background: var(--grisligero);
   border-radius: 10px;
   transition: background-color 0.7s ease-in-out, transform 0.2s ease-in-out, color 0.7s ease-in-out;
@@ -676,7 +710,6 @@
     grid-template-rows: 0.08fr 0.1fr 0.1fr 1fr;
   }
   #Dashboard nav {
-    overflow: hidden;
     height: -moz-fit-content;
     height: fit-content;
   }
@@ -716,6 +749,22 @@
     -o-object-fit: fill;
        object-fit: fill;
   }
+  #Dashboard section {
+    padding: 0.5dvw 1dvw;
+    gap: 2dvw;
+  }
+  #Dashboard section h1 {
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-right: 3dvw;
+  }
+  #Dashboard section .filtrosbox label {
+    font-weight: 500;
+    font-size: 0.6rem;
+  }
+  #Dashboard section .filtrosbox select {
+    font-size: 0.5rem;
+  }
   #Dashboard aside {
     padding: 0.5rem;
     display: flex;
@@ -727,7 +776,6 @@
   #Dashboard aside h1 {
     font-size: 0.8rem;
     place-self: center;
-    position: sticky;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -854,8 +902,29 @@
   #Dashboard main .maincards article ul li {
     font-size: clamp(2dvw, 2vw, 3vw);
   }
+  #Dashboard main .maincards article ul li::before {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
   #Dashboard main .maincards article .legend {
     display: none;
+  }
+  #Dashboard main .maincards article .legend.circleleg {
+    display: flex !important;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+  }
+  #Dashboard main .maincards article .legend.circlelist {
+    display: flex !important;
+    padding-bottom: 0px;
+    margin-top: 0px;
+  }
+  #Dashboard main .maingrid {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    gap: 2dvw;
   }
   #toastnotf {
     height: -moz-max-content;
