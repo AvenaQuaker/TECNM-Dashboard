@@ -459,9 +459,6 @@
                     place-self: center;
 
                     tr {
-                        transition: background-color 0.2s ease-in-out,
-                            color 0.3s ease-in-out;
-
                         &:hover {
                             background-color: var(--grishover);
                         }
@@ -498,8 +495,32 @@
                         --aspect-ratio: 12/ 5;
                     }
 
+                    &.pie {
+                        tbody {
+                            align-self: center;
+                            width: 60%;
+                        }
+                    }
+
                     .highlighted {
                         animation: highlighted-bar 2s linear infinite;
+                    }
+
+                    &.stacked {
+                        --color-1: rgba(0, 226, 124, 0.75);
+                        --color-2: rgba(79, 178, 133, 0.75);
+                        --color-3: rgb(60, 137, 109, 0.75);
+                        --color-4: rgb(49, 102, 83, 0.75);
+                        --color-5: rgb(44, 90, 67, 0.75);
+                        --color-6: rgb(30, 71, 51, 0.75);
+                        --color-7: rgb(20, 56, 38, 0.75);
+                        --aspect-ratio: 16 / 9;
+                        margin-bottom: 1rem;
+
+                        th {
+                            font-size: 1rem;
+                            font-weight: 400;
+                        }
                     }
 
                     @keyframes highlighted-bar {
@@ -536,6 +557,14 @@
                         height: 1dvw;
                         border-radius: 3px;
                     }
+
+                    &.circleleg {
+                        padding-top: 0px;
+                    }
+
+                    &.circlelist {
+                        padding-bottom: 0px;
+                    }
                 }
 
                 .listotal {
@@ -568,9 +597,6 @@
                     place-self: center;
 
                     tr {
-                        transition: background-color 0.2s ease-in-out,
-                            color 0.3s ease-in-out;
-
                         &:hover {
                             background-color: var(--grishover);
                         }
@@ -611,6 +637,14 @@
                         animation: highlighted-bar 2s linear infinite;
                     }
 
+                    &.stacked {
+                        --aspect-ratio: 16 / 9;
+                        th {
+                            font-size: 1rem;
+                            font-weight: 400;
+                        }
+                    }
+
                     @keyframes highlighted-bar {
                         0% {
                             box-shadow: none;
@@ -636,6 +670,14 @@
                         width: 0.9dvw;
                         height: 0.9dvw;
                         border-radius: 3px;
+                    }
+
+                    &.circleleg {
+                        padding-top: 0px;
+                    }
+
+                    &.circlelist {
+                        padding-bottom: 0px;
                     }
                 }
 
@@ -928,9 +970,13 @@
                         place-self: center;
 
                         caption {
-                            font-size: 0.8rem;
+                            font-size: 0.9rem;
                         }
                         tr {
+                            th {
+                                font-size: 0.6rem;
+                            }
+
                             td {
                                 font-size: 2dvw;
                             }
@@ -946,8 +992,12 @@
                             }
                         }
 
-                        th {
-                            font-size: 0.6rem !important;
+                        &.stacked {
+                            --aspect-ratio: 16 / 9;
+                            th {
+                                font-size: 0.8rem;
+                                font-weight: 400;
+                            }
                         }
 
                         .highlighted {

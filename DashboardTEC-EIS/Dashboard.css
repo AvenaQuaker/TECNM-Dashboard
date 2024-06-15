@@ -379,9 +379,6 @@
 #Dashboard main .maincards article table {
   place-self: center;
 }
-#Dashboard main .maincards article table tr {
-  transition: background-color 0.2s ease-in-out, color 0.3s ease-in-out;
-}
 #Dashboard main .maincards article table tr:hover {
   background-color: var(--grishover);
 }
@@ -410,8 +407,27 @@
 #Dashboard main .maincards article table.bar {
   --aspect-ratio: 12/ 5;
 }
+#Dashboard main .maincards article table.pie tbody {
+  align-self: center;
+  width: 60%;
+}
 #Dashboard main .maincards article table .highlighted {
   animation: highlighted-bar 2s linear infinite;
+}
+#Dashboard main .maincards article table.stacked {
+  --color-1: rgba(0, 226, 124, 0.75);
+  --color-2: rgba(79, 178, 133, 0.75);
+  --color-3: rgb(60, 137, 109, 0.75);
+  --color-4: rgb(49, 102, 83, 0.75);
+  --color-5: rgb(44, 90, 67, 0.75);
+  --color-6: rgb(30, 71, 51, 0.75);
+  --color-7: rgb(20, 56, 38, 0.75);
+  --aspect-ratio: 16 / 9;
+  margin-bottom: 1rem;
+}
+#Dashboard main .maincards article table.stacked th {
+  font-size: 1rem;
+  font-weight: 400;
 }
 @keyframes highlighted-bar {
   0% {
@@ -442,6 +458,12 @@
   height: 1dvw;
   border-radius: 3px;
 }
+#Dashboard main .maincards article ul.circleleg {
+  padding-top: 0px;
+}
+#Dashboard main .maincards article ul.circlelist {
+  padding-bottom: 0px;
+}
 #Dashboard main .maincards article .listotal {
   display: flex;
   flex-direction: row;
@@ -466,9 +488,6 @@
 }
 #Dashboard main .maingrid article table {
   place-self: center;
-}
-#Dashboard main .maingrid article table tr {
-  transition: background-color 0.2s ease-in-out, color 0.3s ease-in-out;
 }
 #Dashboard main .maingrid article table tr:hover {
   background-color: var(--grishover);
@@ -501,6 +520,13 @@
 #Dashboard main .maingrid article table .highlighted {
   animation: highlighted-bar 2s linear infinite;
 }
+#Dashboard main .maingrid article table.stacked {
+  --aspect-ratio: 16 / 9;
+}
+#Dashboard main .maingrid article table.stacked th {
+  font-size: 1rem;
+  font-weight: 400;
+}
 @keyframes highlighted-bar {
   0% {
     box-shadow: none;
@@ -523,6 +549,12 @@
   width: 0.9dvw;
   height: 0.9dvw;
   border-radius: 3px;
+}
+#Dashboard main .maingrid article ul.circleleg {
+  padding-top: 0px;
+}
+#Dashboard main .maingrid article ul.circlelist {
+  padding-bottom: 0px;
 }
 #Dashboard main .maingrid article .listotal {
   display: flex;
@@ -779,7 +811,10 @@
     place-self: center;
   }
   #Dashboard main .maincards article table caption {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+  }
+  #Dashboard main .maincards article table tr th {
+    font-size: 0.6rem;
   }
   #Dashboard main .maincards article table tr td {
     font-size: 2dvw;
@@ -792,8 +827,12 @@
     margin-inline-end: 0px;
     box-shadow: none;
   }
-  #Dashboard main .maincards article table th {
-    font-size: 0.6rem !important;
+  #Dashboard main .maincards article table.stacked {
+    --aspect-ratio: 16 / 9;
+  }
+  #Dashboard main .maincards article table.stacked th {
+    font-size: 0.8rem;
+    font-weight: 400;
   }
   #Dashboard main .maincards article table .highlighted {
     animation: highlighted-bar 2s linear infinite;

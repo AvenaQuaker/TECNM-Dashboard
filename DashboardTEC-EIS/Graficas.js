@@ -567,112 +567,212 @@ function generalGrafica4() {
 
     </ul>`;
 }
-// function generalGrafica1() {
-//     let Suma = 0;
-//     let datosConvertidos = [];
-//     let PosicionesIniciales = [];
 
-//     datos.forEach((dato) => {
-//         Suma = Suma + dato.total;
-//     });
-//     datos.forEach((dato) => {
-//         let datoConvertido = dato.total / Suma;
-//         datosConvertidos.push(datoConvertido);
-//     });
+function generalGrafica5() {
+    var Instalaciones = [
+        [
+            { nombre: "Administracion 2 Niveles", Cantidad: 1 },
+            { nombre: "Audivisual", Cantidad: 1 },
+            { nombre: "Biblioteca", Cantidad: 1 },
+            { nombre: "Centro de Computo", Cantidad: 1 },
+            { nombre: "Cubiculos para maestros", Cantidad: 8 },
+            { nombre: "Cafeteria", Cantidad: 1 },
+            { nombre: "Almacen", Cantidad: 1 },
+        ],
+        [
+            { nombre: "Basquetbol/Voleibol", Cantidad: 3 },
+            { nombre: "Beisbol", Cantidad: 1 },
+            { nombre: "Gimnasio-Auditorio", Cantidad: 1 },
+            { nombre: "Pista de atletismo", Cantidad: 1 },
+            { nombre: "Futrap", Cantidad: 1 },
+            { nombre: "Voleibol Playa", Cantidad: 1 },
+            { nombre: "Futbol al Aire Libre", Cantidad: 4 },
+        ],
+        [
+            { nombre: "Caldera", Cantidad: 1 },
+            { nombre: "Cisterna", Cantidad: 4 },
+            { nombre: "Plaza civica", Cantidad: 1 },
+            { nombre: "Estacionamientos", Cantidad: 3 },
+            { nombre: "Subestacion Electrica", Cantidad: 4 },
+        ],
+        [
+            { nombre: "Lab Computo 2 Niveles", Cantidad: 1 },
+            { nombre: "Lab IngElectronica", Cantidad: 1 },
+            { nombre: "Lab Quimica", Cantidad: 1 },
+            { nombre: "Lab IngCivil", Cantidad: 1 },
+            { nombre: "Lab IngElectrica", Cantidad: 1 },
+        ],
+    ];
 
-//     let Posicion = 0;
-//     datosConvertidos.forEach((dato) => {
-//         Posicion = Posicion + dato;
-//         PosicionesIniciales.push(Posicion);
-//     });
+    let datoMayor = -Infinity;
+    const totalesInstalaciones = Instalaciones.map((Arreglo) => {
+        const total = Arreglo.reduce((acc, dato) => acc + dato.Cantidad, 0);
+        if (total > datoMayor) {
+            datoMayor = total;
+        }
+        return total;
+    });
 
-//     let graficageneral1 = document.getElementById("general1");
-//     graficageneral1.innerHTML = `<table
-//                             class="charts-css pie show-heading show-2-secondary-axes data-spacing-5">
-//                             <caption>
-//                                 Aporte a la matricula nacional
-//                             </caption>
-//                             <thead>
-//                                 <tr>
-//                                     <th scope="col">Carrera</th>
-//                                     <th scope="col">Value</th>
-//                                 </tr>
-//                             </thead>
-//                             <tbody>
-//                                 <tr>
-//                                     <th>Arquitectura</th>
-//                                     <td style="--start: 0; --size: ${PosicionesIniciales[0]}">
-//                                     </td>
-//                                 </tr>
-//                                 <tr>
-//                                     <th>IngCivil</th>
-//                                     <td style="--start:${PosicionesIniciales[0]}; --size: ${PosicionesIniciales[1]}">
+    const filas = Instalaciones.map((Arreglo) =>
+        Arreglo.map(
+            (dato) => `
+                <td style="--size: calc(${dato.Cantidad} / ${datoMayor})">
+                    ${dato.Cantidad}
+                    <span class="tooltip">
+                        ${dato.nombre} <br /><br />
+                        Cantidad: ${dato.Cantidad}
+                    </span>
+                </td>
+            `
+        ).join("")
+    );
 
-//                                     </td>
-//                                 </tr>
-//                                 <tr>
-//                                     <th>IngElectronica</th>
-//                                     <td style="--start: ${PosicionesIniciales[1]}; --size: ${PosicionesIniciales[2]}">
+    const graficageneral5 = document.getElementById("general5");
+    graficageneral5.innerHTML = `
+        <table class="charts-css column reverse multiple stacked data-size show-labels show-heading show-primary-axis show-8-secondary-axes show-data-axes data-spacing-10 data-center">
+            <caption>Informacion de las Instalaciones y Aulas</caption>
+            <tbody>
+                <tr>
+                    <th>Instalaciones</th>
+                    ${filas[0]}
+                </tr>
+                <tr>
+                    <th>Deportes</th>
+                    ${filas[1]}
+                </tr>
+                <tr>
+                    <th>Servicios</th>
+                    ${filas[2]}
+                </tr>
+                <tr>
+                    <th>Laboratorios</th>
+                    ${filas[3]}
+                </tr>
+            </tbody>
+        </table>
+        <ul class="listotal">
+            <li>Total de Instalaciones Comunes: <br /><strong>${totalesInstalaciones[0]}</strong></li>
+            <li>Total de Instalaciones de Deportes:<br /><strong>${totalesInstalaciones[1]}</strong></li>
+            <li>Total de Instalaciones de Servicios: <br /><strong>${totalesInstalaciones[2]}</strong></li>
+            <li>Total de Instalaciones de Laboratorios:<br /><strong>${totalesInstalaciones[3]}</strong></li>
+        </ul>`;
+}
 
-//                                     </td>
-//                                 </tr>
-//                                 <tr>
-//                                     <th>IngElectrica</th>
-//                                     <td style="--start: ${PosicionesIniciales[2]}; --size: ${PosicionesIniciales[3]}">
+function generalGrafica6() {
+    var datos = [
+        { terreno: "Area total de terreno", Cantidad: 167933.89 },
+        { terreno: "Area total construida", Cantidad: 93638.0 },
+        { terreno: "Area verde", Cantidad: 16335.0 },
+        { terreno: "Area de estacionamientos", Cantidad: 16800.0 },
+        { terreno: "Predio Legalizado", Cantidad: 1 },
+    ];
 
-//                                     </td>
-//                                 </tr>
-//                                 <tr>
-//                                     <th>Ingindustrial</th>
-//                                     <td style="--start: ${PosicionesIniciales[3]}; --size: ${PosicionesIniciales[4]}" class="highlighted">
+    let datoMayor = -Infinity,
+        Suma = 0;
 
-//                                     </td>
-//                                 </tr>
-//                                 <tr>
-//                                     <th>IngMecanica</th>
-//                                     <td style="--start: ${PosicionesIniciales[4]}; --size: ${PosicionesIniciales[5]}">
+    datos.forEach((dato) => {
+        if (dato.Cantidad > datoMayor) {
+            datoMayor = dato.Cantidad;
+        }
+        Suma = Suma + dato.Cantidad;
+    });
 
-//                                     </td>
-//                                 </tr>
-//                                 <tr>
-//                                     <th>IngMecatronica</th>
-//                                     <td style="--start: ${PosicionesIniciales[5]}; --size: ${PosicionesIniciales[6]}"></td>
-//                                 </tr>
-//                                 <tr>
-//                                     <th>IngSistemas</th>
-//                                     <td style="--start: ${PosicionesIniciales[6]}; --size: ${PosicionesIniciales[7]}">
+    let graficageneral6 = document.getElementById("general6");
+    let filas = datos
+        .map(
+            (dato) => `
+    <tr>
+        <td style="--size: calc(${dato.Cantidad} / ${datoMayor})" ${
+                dato.Cantidad === datoMayor ? 'class="highlighted"' : ""
+            }>
+            ${dato.Cantidad}
+            <span class="tooltip">
+                ${dato.terreno} <br /><br />
+                Area: ${dato.Cantidad} M2<br />
+            </span>
+        </td>
+    </tr>`
+        )
+        .join("");
 
-//                                     </td>
-//                                 </tr>
-//                                 <tr>
-//                                     <th>GestionEmpresarial</th>
-//                                     <td style="--start: ${PosicionesIniciales[7]}; --size: ${PosicionesIniciales[8]}">
+    let legendas = datos.map((dato) => `<li>${dato.terreno}</li>`).join("");
 
-//                                     </td>
-//                                 </tr>
-//                                 <tr>
-//                                     <th>Administracion</th>
-//                                     <td style="--start: ${PosicionesIniciales[8]}; --size: ${PosicionesIniciales[9]}">
+    graficageneral6.innerHTML = `
+    <table class="charts-css column data-size show-heading show-primary-axis show-8-secondary-axes show-data-axes data-spacing-5">
+        <caption>Terreno de las Instalaciones (M2)</caption>
+        <thead>
+            <tr>
+                <th scope="col">Terreno</th>
+                <th scope="col">Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            ${filas}
+        </tbody>
+    </table>
+    <ul class="charts-css legend legend-square legend-inline">
+        ${legendas}
+    </ul>
+    <ul class="listotal">
+        <li>Terreno total: <br /><strong>${Suma}</strong></li>
+    </ul>`;
+}
 
-//                                     </td>
-//                                 </tr>
-//                                 <tr>
-//                                     <th>ContadorPublico</th>
-//                                     <td style="--start: ${PosicionesIniciales[9]}; --size: ${PosicionesIniciales[10]}">
-//                                     </td>
-//                                 </tr>
-//                             </tbody>
-//                         </table>
-//                         <ul
-//                             class="charts-css legend legend-square legend-inline">
-//                             <li>Arquitectura</li>
-//                             <li>Ing.Civil</li>
-//                             <li>Ing.Electronica</li>
-//                             <li>Ing.Electrica</li>
-//                             <li>Ing.Industrial</li>
-//                             <li>Ing.Mecanica</li>
-//                             <li>Gestion Empresarial</li>
-//                             <li>Administracion</li>
-//                             <li>Contador Publico</li>
-//                         </ul>`;
-// }
+function generalGrafica7() {
+    let datos = {
+        AulasConstruidas: 63,
+        AulasAdaptadas: 35,
+    };
+
+    let total = datos.AulasConstruidas + datos.AulasAdaptadas;
+    let datosConvertidos = Object.values(datos).map((dato) => dato / total);
+
+    let PosicionesIniciales = [];
+    let Posicion = 0;
+
+    datosConvertidos.forEach((dato) => {
+        Posicion += dato;
+        PosicionesIniciales.push(Posicion);
+    });
+
+    let graficageneral7 = document.getElementById("general7");
+    graficageneral7.innerHTML = `
+        <table class="charts-css pie show-heading show-2-secondary-axes data-spacing-5">
+            <caption>
+                Cantidad de aulas construidas y adaptadas
+            </caption>
+            <tbody>
+                <tr>
+                    <th>Aulas Construidas</th>
+                    <td style="--start: 0; --end: ${
+                        PosicionesIniciales[0]
+                    }"></td>
+                </tr>
+                <tr>
+                    <th>Aulas Adaptadas</th>
+                    <td style="--start: ${PosicionesIniciales[0]}; --end: ${
+        PosicionesIniciales[1]
+    }"></td>
+                </tr>
+            </tbody>
+        </table>
+        <ul class="charts-css legend-inline legend circlelist">
+            <li>Aulas Construidas = &nbsp; <strong>  
+            ${datos.AulasConstruidas} 
+                </strong></li>
+            <li>Aulas Adaptadas = &nbsp;<strong>  
+            ${datos.AulasAdaptadas} 
+            </strong></li>
+        </ul>
+        <ul class="charts-css legend legend-square legend-inline circleleg">
+            <li>Aulas Construidas = &nbsp; <strong>  ${Number(
+                (datosConvertidos[0] * 100).toFixed(2)
+            )} %</strong></li>
+            <li>Aulas Adaptadas = &nbsp;<strong>  ${Number(
+                (datosConvertidos[1] * 100).toFixed(2)
+            )} %</strong></li>
+        </ul>
+        <ul class="listotal">
+        <li>Numero de aulas totales: <br /><strong>${total}</strong></li>
+        </ul>`;
+}

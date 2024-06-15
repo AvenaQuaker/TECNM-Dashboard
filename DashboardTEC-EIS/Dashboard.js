@@ -216,6 +216,9 @@ document.addEventListener("DOMContentLoaded", () => {
     generalGrafica2();
     generalGrafica3();
     generalGrafica4();
+    generalGrafica5();
+    generalGrafica6();
+    generalGrafica7();
 });
 
 function PruebaN() {
