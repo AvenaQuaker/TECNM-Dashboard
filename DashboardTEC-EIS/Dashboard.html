@@ -58,15 +58,15 @@
                 <div class="filtrosbox">
                     <label>Anual</label>
                     <select id="anual">
-                        <option value="SinFiltro">Sin Filtro</option>
+                        <option value="SinFiltro">TODOS</option>
                         <option value="AnoActual">2024</option>
-                        <option value="AnoAnterior">2023</option>
+                        <option value="AnoPasado">⭠2023</option>
                     </select>
                 </div>
                 <div class="filtrosbox">
                     <label>Mensual</label>
                     <select id="meses">
-                        <option value="SinFiltro">Sin Filtro</option>
+                        <option value="SinFiltro">TODOS</option>
                         <option value="enero">Enero</option>
                         <option value="febrero">Febrero</option>
                         <option value="marzo">Marzo</option>
@@ -84,7 +84,7 @@
                 <div class="filtrosbox">
                     <label>Genero</label>
                     <select id="genero">
-                        <option value="Sin Filtro">Sin Filtro</option>
+                        <option value="SinFiltro">TODOS</option>
                         <option value="Hombre">Hombre</option>
                         <option value="Mujer">Mujer</option>
                         <option value="Objeto">Objeto</option>
@@ -93,7 +93,7 @@
                 <div class="filtrosbox">
                     <label>Filtro Extra</label>
                     <select>
-                        <option value="Sin Filtro">Sin Filtro</option>
+                        <option value="Sin Filtro">TODOS</option>
                     </select>
                 </div>
             </section>
@@ -183,17 +183,33 @@
                 <div class="maintop">
                     <h1>Contenido principal</h1>
                     <button onclick="cambiarDisplay()">
-                        <img src="wwwroot/Resources/Barras.svg" id="imggrid" />
+                        <img
+                            src="/TEC/wwwroot/Resources/Barras.svg"
+                            id="imggrid" />
                     </button>
                 </div>
                 <section class="maincards" id="maincardsGeneral">
-                    <article id="general1"></article>
-                    <article id="general2"></article>
-                    <article id="general3"></article>
-                    <article id="general4"></article>
-                    <article id="general5"></article>
-                    <article id="general6"></article>
-                    <article id="general7"></article>
+                    <article
+                        class="grafica AnoPasado Hombre Mujer"
+                        id="general1"></article>
+                    <article
+                        class="grafica AnoPasado Hombre Mujer"
+                        id="general2"></article>
+                    <article
+                        class="grafica AnoPasado Hombre Mujer"
+                        id="general3"></article>
+                    <article
+                        class="grafica AnoPasado Hombre Mujer"
+                        id="general4"></article>
+                    <article
+                        class="grafica AnoPasado Objeto"
+                        id="general5"></article>
+                    <article
+                        class="grafica AnoPasado Objeto"
+                        id="general6"></article>
+                    <article
+                        class="grafica AnoPasado Objeto"
+                        id="general7"></article>
                 </section>
                 <section class="maincards" id="maincards1">
                     <strong

@@ -393,7 +393,7 @@
   color: var(--grisClaroA);
   transition: background-color 0.7s ease-in-out, transform 0.2s ease-in-out, color 0.7s ease-in-out;
 }
-#Dashboard main .maincards article {
+#Dashboard main .maincards .grafica {
   display: flex;
   align-items: center;
   justify-items: center;
@@ -407,48 +407,48 @@
   padding: 1dvw;
   color: var(--negro);
 }
-#Dashboard main .maincards article strong {
+#Dashboard main .maincards .grafica strong {
   color: var(--gris);
 }
-#Dashboard main .maincards article table {
+#Dashboard main .maincards .grafica table {
   place-self: center;
 }
-#Dashboard main .maincards article table tr:hover {
+#Dashboard main .maincards .grafica table tr:hover {
   background-color: var(--grishover);
 }
-#Dashboard main .maincards article table tr td {
+#Dashboard main .maincards .grafica table tr td {
   font-size: 1dvw;
 }
-#Dashboard main .maincards article table tr th {
+#Dashboard main .maincards .grafica table tr th {
   display: flex;
   flex-direction: column;
   font-size: 0.8dvw;
   font-weight: 350;
 }
-#Dashboard main .maincards article table caption {
+#Dashboard main .maincards .grafica table caption {
   color: var(--negro);
   font-size: clamp(0.8rem, 1.5vw, 1.5rem);
   font-weight: 500;
   margin-bottom: 3dvh;
   transition: color 0.7s ease-in-out;
 }
-#Dashboard main .maincards article table .tooltip {
+#Dashboard main .maincards .grafica table .tooltip {
   pointer-events: none;
 }
-#Dashboard main .maincards article table.column {
+#Dashboard main .maincards .grafica table.column {
   --aspect-ratio: 21 / 7;
 }
-#Dashboard main .maincards article table.bar {
+#Dashboard main .maincards .grafica table.bar {
   --aspect-ratio: 12/ 5;
 }
-#Dashboard main .maincards article table.pie tbody {
+#Dashboard main .maincards .grafica table.pie tbody {
   align-self: center;
   width: 60%;
 }
-#Dashboard main .maincards article table .highlighted {
+#Dashboard main .maincards .grafica table .highlighted {
   animation: highlighted-bar 2s linear infinite;
 }
-#Dashboard main .maincards article table.stacked {
+#Dashboard main .maincards .grafica table.stacked {
   --color-1: rgba(0, 226, 124, 0.75);
   --color-2: rgba(79, 178, 133, 0.75);
   --color-3: rgb(60, 137, 109, 0.75);
@@ -459,7 +459,7 @@
   --aspect-ratio: 16 / 9;
   margin-bottom: 1rem;
 }
-#Dashboard main .maincards article table.stacked th {
+#Dashboard main .maincards .grafica table.stacked th {
   font-size: 1rem;
   font-weight: 400;
 }
@@ -474,37 +474,37 @@
     box-shadow: none;
   }
 }
-#Dashboard main .maincards article ul {
+#Dashboard main .maincards .grafica ul {
   display: flex;
   justify-content: center;
   border: none;
   gap: 0.5dvw;
   transition: background-color 0.7s ease-in-out, color 0.7s ease-in-out;
 }
-#Dashboard main .maincards article ul li {
+#Dashboard main .maincards .grafica ul li {
   font-size: clamp(0.7rem, 1vw, 1vw);
   font-weight: 300;
   color: var(--gris);
   transition: background-color 0.7s ease-in-out, color 0.7s ease-in-out;
 }
-#Dashboard main .maincards article ul li::before {
+#Dashboard main .maincards .grafica ul li::before {
   width: 1dvw;
   height: 1dvw;
   border-radius: 3px;
 }
-#Dashboard main .maincards article ul.circleleg {
+#Dashboard main .maincards .grafica ul.circleleg {
   padding-top: 0px;
 }
-#Dashboard main .maincards article ul.circlelist {
+#Dashboard main .maincards .grafica ul.circlelist {
   padding-bottom: 0px;
 }
-#Dashboard main .maincards article .listotal {
+#Dashboard main .maincards .grafica .listotal {
   display: flex;
   flex-direction: row;
   list-style-type: none;
   text-align: center;
 }
-#Dashboard main .maincards article .listotal li {
+#Dashboard main .maincards .grafica .listotal li {
   color: var(--gris);
   padding: 0.5dvw;
 }
@@ -515,49 +515,49 @@
   align-items: center;
   background: transparent;
 }
-#Dashboard main .maingrid article {
+#Dashboard main .maingrid .grafica {
   background: var(--grisligero);
   border-radius: 10px;
   padding: 1dvw;
 }
-#Dashboard main .maingrid article table {
+#Dashboard main .maingrid .grafica table {
   place-self: center;
 }
-#Dashboard main .maingrid article table tr:hover {
+#Dashboard main .maingrid .grafica table tr:hover {
   background-color: var(--grishover);
 }
-#Dashboard main .maingrid article table tr td {
+#Dashboard main .maingrid .grafica table tr td {
   font-size: 0.8dvw;
 }
-#Dashboard main .maingrid article table tr th {
+#Dashboard main .maingrid .grafica table tr th {
   display: flex;
   flex-direction: column;
   font-size: 0.8dvw;
   font-weight: 350;
 }
-#Dashboard main .maingrid article table caption {
+#Dashboard main .maingrid .grafica table caption {
   color: var(--negro);
   font-size: clamp(0.8rem, 1.2vw, 1.5rem);
   font-weight: 500;
   margin-bottom: 3dvh;
   transition: color 0.7s ease-in-out;
 }
-#Dashboard main .maingrid article table .tooltip {
+#Dashboard main .maingrid .grafica table .tooltip {
   pointer-events: none;
 }
-#Dashboard main .maingrid article table.column {
+#Dashboard main .maingrid .grafica table.column {
   --aspect-ratio: 21 / 9;
 }
-#Dashboard main .maingrid article table.bar {
+#Dashboard main .maingrid .grafica table.bar {
   --aspect-ratio: 11 / 8;
 }
-#Dashboard main .maingrid article table .highlighted {
+#Dashboard main .maingrid .grafica table .highlighted {
   animation: highlighted-bar 2s linear infinite;
 }
-#Dashboard main .maingrid article table.stacked {
+#Dashboard main .maingrid .grafica table.stacked {
   --aspect-ratio: 16 / 9;
 }
-#Dashboard main .maingrid article table.stacked th {
+#Dashboard main .maingrid .grafica table.stacked th {
   font-size: 1rem;
   font-weight: 400;
 }
@@ -572,31 +572,31 @@
     box-shadow: none;
   }
 }
-#Dashboard main .maingrid article ul {
+#Dashboard main .maingrid .grafica ul {
   gap: 0.3dvw;
 }
-#Dashboard main .maingrid article ul li {
+#Dashboard main .maingrid .grafica ul li {
   font-size: clamp(0.5rem, 0.8vw, 0.8vw);
   font-weight: 300;
 }
-#Dashboard main .maingrid article ul li::before {
+#Dashboard main .maingrid .grafica ul li::before {
   width: 0.9dvw;
   height: 0.9dvw;
   border-radius: 3px;
 }
-#Dashboard main .maingrid article ul.circleleg {
+#Dashboard main .maingrid .grafica ul.circleleg {
   padding-top: 0px;
 }
-#Dashboard main .maingrid article ul.circlelist {
+#Dashboard main .maingrid .grafica ul.circlelist {
   padding-bottom: 0px;
 }
-#Dashboard main .maingrid article .listotal {
+#Dashboard main .maingrid .grafica .listotal {
   display: flex;
   flex-direction: row;
   list-style-type: none;
   text-align: center;
 }
-#Dashboard main .maingrid article .listotal li {
+#Dashboard main .maingrid .grafica .listotal li {
   color: var(--gris);
   padding: 0.3dvw;
 }
@@ -821,8 +821,7 @@
   #Dashboard main {
     display: flex;
     flex-direction: column;
-    height: -moz-fit-content;
-    height: fit-content;
+    height: auto;
     border-radius: 0px;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
@@ -847,42 +846,42 @@
   #Dashboard main .maincards strong {
     font-size: 0.7rem;
   }
-  #Dashboard main .maincards article {
+  #Dashboard main .maincards .grafica {
     height: -moz-max-content;
     height: max-content;
     padding: 1dvw;
   }
-  #Dashboard main .maincards article strong {
+  #Dashboard main .maincards .grafica strong {
     font-size: 2dvw;
   }
-  #Dashboard main .maincards article table {
+  #Dashboard main .maincards .grafica table {
     place-self: center;
   }
-  #Dashboard main .maincards article table caption {
+  #Dashboard main .maincards .grafica table caption {
     font-size: 0.9rem;
   }
-  #Dashboard main .maincards article table tr th {
+  #Dashboard main .maincards .grafica table tr th {
     font-size: 0.6rem;
   }
-  #Dashboard main .maincards article table tr td {
+  #Dashboard main .maincards .grafica table tr td {
     font-size: 2dvw;
   }
-  #Dashboard main .maincards article table.column {
+  #Dashboard main .maincards .grafica table.column {
     --aspect-ratio: 21 / 7;
   }
-  #Dashboard main .maincards article table.column tbody td {
+  #Dashboard main .maincards .grafica table.column tbody td {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     box-shadow: none;
   }
-  #Dashboard main .maincards article table.stacked {
+  #Dashboard main .maincards .grafica table.stacked {
     --aspect-ratio: 16 / 9;
   }
-  #Dashboard main .maincards article table.stacked th {
+  #Dashboard main .maincards .grafica table.stacked th {
     font-size: 0.8rem;
     font-weight: 400;
   }
-  #Dashboard main .maincards article table .highlighted {
+  #Dashboard main .maincards .grafica table .highlighted {
     animation: highlighted-bar 2s linear infinite;
   }
   @keyframes highlighted-bar {
@@ -896,26 +895,26 @@
       box-shadow: none;
     }
   }
-  #Dashboard main .maincards article ul {
+  #Dashboard main .maincards .grafica ul {
     margin-top: 1rem;
   }
-  #Dashboard main .maincards article ul li {
+  #Dashboard main .maincards .grafica ul li {
     font-size: clamp(2dvw, 2vw, 3vw);
   }
-  #Dashboard main .maincards article ul li::before {
+  #Dashboard main .maincards .grafica ul li::before {
     width: 0.8rem;
     height: 0.8rem;
   }
-  #Dashboard main .maincards article .legend {
+  #Dashboard main .maincards .grafica .legend {
     display: none;
   }
-  #Dashboard main .maincards article .legend.circleleg {
+  #Dashboard main .maincards .grafica .legend.circleleg {
     display: flex !important;
     padding-top: 0px;
     padding-bottom: 0px;
     margin-top: 0px;
   }
-  #Dashboard main .maincards article .legend.circlelist {
+  #Dashboard main .maincards .grafica .legend.circlelist {
     display: flex !important;
     padding-bottom: 0px;
     margin-top: 0px;

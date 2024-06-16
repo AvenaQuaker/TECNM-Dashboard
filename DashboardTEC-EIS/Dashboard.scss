@@ -475,7 +475,7 @@
                     transform 0.2s ease-in-out, color 0.7s ease-in-out;
             }
 
-            article {
+            .grafica {
                 display: flex;
                 align-items: center;
                 justify-items: center;
@@ -626,7 +626,7 @@
             align-items: center;
             background: transparent;
 
-            article {
+            .grafica {
                 background: var(--grisligero);
                 border-radius: 10px;
                 padding: 1dvw;
@@ -988,7 +988,7 @@
         main {
             display: flex;
             flex-direction: column;
-            height: fit-content;
+            height: auto;
             border-radius: 0px;
             border-top-left-radius: 2rem;
             border-top-right-radius: 2rem;
@@ -1016,7 +1016,7 @@
                     font-size: 0.7rem;
                 }
 
-                article {
+                .grafica {
                     height: max-content;
                     padding: 1dvw;
 

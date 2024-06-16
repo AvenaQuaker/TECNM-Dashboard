@@ -21,6 +21,10 @@ let imggrid = document.getElementById("imggrid");
 let deplista = document.getElementById("deplista");
 let listadep = deplista.querySelectorAll("article");
 let listamain = document.getElementById("main");
+let graficas = document.querySelectorAll(".grafica");
+let filtro1 = document.getElementById("anual");
+let filtro2 = document.getElementById("meses");
+let filtro3 = document.getElementById("genero");
 
 // Eventos especiales
 listadep.forEach(function (departamento) {
@@ -29,6 +33,38 @@ listadep.forEach(function (departamento) {
         intercambiarDepartamento();
     });
 });
+
+filtro1.addEventListener("change", filtrarGraficas);
+filtro2.addEventListener("change", filtrarGraficas);
+filtro3.addEventListener("change", filtrarGraficas);
+
+function filtrarGraficas() {
+    let valorAnual = filtro1.value;
+    let valorMes = filtro2.value;
+    let valorGenero = filtro3.value;
+
+    graficas.forEach((grafica) => {
+        let cumpleFiltroAnual =
+            valorAnual === "SinFiltro" ||
+            grafica.classList.contains(valorAnual);
+        let cumpleFiltroMes =
+            valorMes === "SinFiltro" || grafica.classList.contains(valorMes);
+        let cumpleFiltroGenero =
+            valorGenero === "SinFiltro" ||
+            grafica.classList.contains(valorGenero);
+
+        if (
+            cumpleFiltroAnual &&
+            cumpleFiltroMes &&
+            cumpleFiltroGenero &&
+            cumpleFiltroGenero
+        ) {
+            grafica.style.display = "flex";
+        } else {
+            grafica.style.display = "none";
+        }
+    });
+}
 
 function cambiarDisplay() {
     if (sesiondisplay == "flex") {
