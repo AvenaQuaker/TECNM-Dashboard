@@ -238,7 +238,11 @@
             color: var(--gris);
             font-weight: 600;
             font-size: 1.4dvw;
-            transition: color 0.7s ease-in-out;
+            transition: color 0.7s ease-in-out, transform 0.2s ease-in-out;
+
+            &:hover {
+                transform: translateY(-3px) scale(1.1);
+            }
         }
 
         .filtrosbox {
@@ -246,11 +250,15 @@
             flex-direction: column;
             gap: 0.5dvh;
             color: var(--gris);
-            transition: color 0.7s ease-in-out;
 
             label {
                 font-weight: 500;
                 font-size: 1dvw;
+                transition: color 0.7s ease-in-out, transform 0.2s ease-in-out;
+
+                &:hover {
+                    transform: translateY(-4px);
+                }
             }
 
             select {
@@ -260,10 +268,16 @@
                 height: 3.5dvh;
                 background-color: var(--grisOscuro);
                 transition: color 0.7s ease-in-out,
-                    background-color 0.7s ease-in-out;
+                    background-color 0.7s ease-in-out,
+                    transform 0.3s ease-in-out;
                 color: var(--gris);
                 outline: none;
                 font-size: 0.8dvw;
+                cursor: pointer;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
             }
         }
     }
@@ -735,6 +749,132 @@
     }
 }
 
+#perfil {
+    position: fixed;
+    top: 1%;
+    right: 0.5%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 2rem;
+    gap: 10px;
+    height: fit-content;
+    z-index: 3;
+    transition: background-color 0.7s ease-in-out;
+    border: none;
+    border-radius: 10px;
+    background: var(--grisOscuro);
+    color: var(--gris);
+    text-align: center;
+    //animation: aparecer 1s ease-in-out;
+
+    div {
+        width: 7rem;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        img {
+            width: 100%;
+            object-fit: fill;
+        }
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        font-weight: 500;
+        transition: color 0.7s ease-in-out, transform 0.2s ease-in-out;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    label {
+        font-size: 0.9rem;
+        font-weight: 400;
+        transition: color 0.7s ease-in-out, transform 0.2s ease-in-out;
+
+        .theme {
+            display: flex;
+            align-items: center;
+            -webkit-tap-highlight-color: transparent;
+
+            &__toggle {
+                z-index: 1;
+            }
+
+            &__label,
+            &__toggle,
+            &__toggle-wrap {
+                position: relative;
+            }
+
+            &__toggle,
+            &__toggle:before {
+                display: block;
+            }
+
+            &__toggle {
+                background-color: hsl(48, 90%, 85%);
+                border-radius: 25% / 50%;
+                box-shadow: 0 0 0 0.125em var(--primaryT);
+                padding: 0.25em;
+                width: 5em;
+                height: 2.5em;
+                -webkit-appearance: none;
+                appearance: none;
+                transition: background-color var(--transDur) ease-in-out,
+                    box-shadow 0.15s ease-in-out,
+                    transform var(--transDur) ease-in-out;
+            }
+
+            &__toggle:before {
+                background-color: hsl(48, 90%, 55%);
+                border-radius: 50%;
+                content: "";
+                width: 2em;
+                height: 2em;
+                transition: 0.3s;
+            }
+
+            &__toggle:focus {
+                box-shadow: 0 0 0 0.125em var(--primary);
+                outline: transparent;
+            }
+
+            &__toggle:checked {
+                background-color: hsl(198, 90%, 15%);
+            }
+
+            &__toggle:checked:before,
+            &__toggle:checked ~ {
+                transform: translateX(2.5em);
+            }
+
+            &__toggle:checked:before {
+                background-color: hsl(198, 90%, 55%);
+            }
+
+            &__toggle:checked ~ {
+                transform: translateX(0);
+            }
+
+            @supports selector(:focus-visible) {
+                &__toggle:focus {
+                    box-shadow: 0 0 0 0.125em var(--primaryT);
+                }
+
+                &__toggle:focus-visible {
+                    box-shadow: 0 0 0 0.125em var(--primary);
+                }
+            }
+        }
+    }
+}
+
 #toastnotf {
     position: fixed;
     bottom: 1%;
@@ -802,6 +942,7 @@
 
 @keyframes aparecer {
     0% {
+        pointer-events: all;
         opacity: 0;
         transform: rotate3d(2, -1, -1, -0.2turn);
     }
@@ -819,6 +960,31 @@
     100% {
         opacity: 0;
         transform: rotate3d(-2, 1, 1, 0.3turn);
+        pointer-events: none;
+    }
+}
+
+@keyframes aparecerTargeta {
+    0% {
+        pointer-events: all;
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes desaparecerTargeta {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+        pointer-events: none;
     }
 }
 
@@ -1144,6 +1310,34 @@
                 label {
                     font-size: 0.6rem;
                 }
+            }
+        }
+    }
+
+    #perfil {
+        position: fixed;
+        top: 1%;
+        right: 0.5%;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        gap: 10px;
+        height: fit-content;
+        z-index: 3;
+        transition: background-color 0.7s ease-in-out;
+        border: none;
+        border-radius: 10px;
+        background: var(--grisOscuro);
+        color: var(--gris);
+        text-align: center;
+
+        div {
+            width: 5rem;
+
+            img {
+                width: 100%;
+                object-fit: fill;
             }
         }
     }

@@ -193,18 +193,24 @@
   color: var(--gris);
   font-weight: 600;
   font-size: 1.4dvw;
-  transition: color 0.7s ease-in-out;
+  transition: color 0.7s ease-in-out, transform 0.2s ease-in-out;
+}
+#Dashboard section h1:hover {
+  transform: translateY(-3px) scale(1.1);
 }
 #Dashboard section .filtrosbox {
   display: flex;
   flex-direction: column;
   gap: 0.5dvh;
   color: var(--gris);
-  transition: color 0.7s ease-in-out;
 }
 #Dashboard section .filtrosbox label {
   font-weight: 500;
   font-size: 1dvw;
+  transition: color 0.7s ease-in-out, transform 0.2s ease-in-out;
+}
+#Dashboard section .filtrosbox label:hover {
+  transform: translateY(-4px);
 }
 #Dashboard section .filtrosbox select {
   width: 15dvw;
@@ -212,10 +218,14 @@
   border-radius: 3px;
   height: 3.5dvh;
   background-color: var(--grisOscuro);
-  transition: color 0.7s ease-in-out, background-color 0.7s ease-in-out;
+  transition: color 0.7s ease-in-out, background-color 0.7s ease-in-out, transform 0.3s ease-in-out;
   color: var(--gris);
   outline: none;
   font-size: 0.8dvw;
+  cursor: pointer;
+}
+#Dashboard section .filtrosbox select:hover {
+  transform: scale(1.05);
 }
 #Dashboard aside {
   grid-area: aside;
@@ -601,6 +611,106 @@
   padding: 0.3dvw;
 }
 
+#perfil {
+  position: fixed;
+  top: 1%;
+  right: 0.5%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 2rem;
+  gap: 10px;
+  height: -moz-fit-content;
+  height: fit-content;
+  z-index: 3;
+  transition: background-color 0.7s ease-in-out;
+  border: none;
+  border-radius: 10px;
+  background: var(--grisOscuro);
+  color: var(--gris);
+  text-align: center;
+}
+#perfil div {
+  width: 7rem;
+  transition: transform 0.3s ease;
+}
+#perfil div:hover {
+  transform: scale(1.05);
+}
+#perfil div img {
+  width: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+#perfil h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.7s ease-in-out, transform 0.2s ease-in-out;
+}
+#perfil h2:hover {
+  transform: scale(1.05);
+}
+#perfil label {
+  font-size: 0.9rem;
+  font-weight: 400;
+  transition: color 0.7s ease-in-out, transform 0.2s ease-in-out;
+}
+#perfil label .theme {
+  display: flex;
+  align-items: center;
+  -webkit-tap-highlight-color: transparent;
+}
+#perfil label .theme__toggle {
+  z-index: 1;
+}
+#perfil label .theme__label, #perfil label .theme__toggle, #perfil label .theme__toggle-wrap {
+  position: relative;
+}
+#perfil label .theme__toggle, #perfil label .theme__toggle:before {
+  display: block;
+}
+#perfil label .theme__toggle {
+  background-color: hsl(48, 90%, 85%);
+  border-radius: 25%/50%;
+  box-shadow: 0 0 0 0.125em var(--primaryT);
+  padding: 0.25em;
+  width: 5em;
+  height: 2.5em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  transition: background-color var(--transDur) ease-in-out, box-shadow 0.15s ease-in-out, transform var(--transDur) ease-in-out;
+}
+#perfil label .theme__toggle:before {
+  background-color: hsl(48, 90%, 55%);
+  border-radius: 50%;
+  content: "";
+  width: 2em;
+  height: 2em;
+  transition: 0.3s;
+}
+#perfil label .theme__toggle:focus {
+  box-shadow: 0 0 0 0.125em var(--primary);
+  outline: transparent;
+}
+#perfil label .theme__toggle:checked {
+  background-color: hsl(198, 90%, 15%);
+}
+#perfil label .theme__toggle:checked:before {
+  transform: translateX(2.5em);
+}
+#perfil label .theme__toggle:checked:before {
+  background-color: hsl(198, 90%, 55%);
+}
+@supports selector(:focus-visible) {
+  #perfil label .theme__toggle:focus {
+    box-shadow: 0 0 0 0.125em var(--primaryT);
+  }
+  #perfil label .theme__toggle:focus-visible {
+    box-shadow: 0 0 0 0.125em var(--primary);
+  }
+}
+
 #toastnotf {
   position: fixed;
   bottom: 1%;
@@ -667,6 +777,7 @@
 
 @keyframes aparecer {
   0% {
+    pointer-events: all;
     opacity: 0;
     transform: rotate3d(2, -1, -1, -0.2turn);
   }
@@ -683,6 +794,29 @@
   100% {
     opacity: 0;
     transform: rotate3d(-2, 1, 1, 0.3turn);
+    pointer-events: none;
+  }
+}
+@keyframes aparecerTargeta {
+  0% {
+    pointer-events: all;
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes desaparecerTargeta {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+    pointer-events: none;
   }
 }
 @keyframes iniciocargando {
@@ -953,6 +1087,33 @@
   }
   #toastnotf dialog summary label {
     font-size: 0.6rem;
+  }
+  #perfil {
+    position: fixed;
+    top: 1%;
+    right: 0.5%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 10px;
+    height: -moz-fit-content;
+    height: fit-content;
+    z-index: 3;
+    transition: background-color 0.7s ease-in-out;
+    border: none;
+    border-radius: 10px;
+    background: var(--grisOscuro);
+    color: var(--gris);
+    text-align: center;
+  }
+  #perfil div {
+    width: 5rem;
+  }
+  #perfil div img {
+    width: 100%;
+    -o-object-fit: fill;
+       object-fit: fill;
   }
 }
 @keyframes RevelarSeccion {

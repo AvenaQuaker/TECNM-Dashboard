@@ -16,6 +16,7 @@ const animation = lottie.loadAnimation({
 // Obtencion de Elementos HTML
 const root = document.documentElement;
 let tema = document.getElementById("theme");
+let tema2 = document.getElementById("theme2");
 let imgsorteo = document.getElementById("imgsorteo");
 let imggrid = document.getElementById("imggrid");
 let deplista = document.getElementById("deplista");
@@ -25,6 +26,7 @@ let graficas = document.querySelectorAll(".grafica");
 let filtro1 = document.getElementById("anual");
 let filtro2 = document.getElementById("meses");
 let filtro3 = document.getElementById("genero");
+let perfil = document.getElementById("perfil");
 
 // Eventos especiales
 listadep.forEach(function (departamento) {
@@ -64,6 +66,39 @@ function filtrarGraficas() {
             grafica.style.display = "none";
         }
     });
+}
+
+function MostrarPerfil(e) {
+    perfil.style.display = "flex";
+    perfil.style.animation = "aparecerTargeta 0.8s ease-in-out forwards";
+    e.stopPropagation();
+}
+document.addEventListener("click", (e) => {
+    if (!perfil.contains(e.target)) {
+        perfil.style.animation = "desaparecerTargeta 0.8s ease-in-out forwards";
+        setTimeout(() => {
+            perfil.style.display = "none";
+        }, 1000);
+    }
+});
+
+function cambiarModo1() {
+    tema2.checked = tema.checked;
+    cambiarTema();
+}
+function cambiarModo2() {
+    tema.checked = tema2.checked;
+    cambiarTema();
+}
+
+function cambiarTema() {
+    if (tema.checked || tema2.checked) {
+        sesionTema = "oscuro";
+        intercambiarColores();
+    } else {
+        sesionTema = "claro";
+        intercambiarColores();
+    }
 }
 
 function cambiarDisplay() {
@@ -147,16 +182,7 @@ function intercambiarDepartamento() {
     }
     controlarDisplay();
 }
-//Metodos pa el Modo Oscuro
-function cambiarTema() {
-    if (tema.checked) {
-        sesionTema = "oscuro";
-        intercambiarColores();
-    } else {
-        sesionTema = "claro";
-        intercambiarColores();
-    }
-}
+
 function intercambiarColores() {
     if (sesionTema == "claro") {
         root.style.setProperty("--blanco", "white");
@@ -209,6 +235,18 @@ function intercambiarSorteo() {
     }
 }
 
+function ActualizarFechas() {
+    let Opcion1 = document.getElementById("anoactual");
+    let Opcion2 = document.getElementById("anopasado");
+
+    let fechaActual = new Date();
+    let fechaPasada = new Date();
+    fechaPasada.setFullYear(fechaActual.getFullYear() - 1);
+
+    Opcion1.innerText = fechaActual.getFullYear();
+    Opcion2.innerText = "⭠" + fechaPasada.getFullYear();
+}
+
 // Metodos del Backend
 
 window.addEventListener("beforeunload", () => {
@@ -224,6 +262,7 @@ window.addEventListener("beforeunload", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     InvocarCarga(2000);
+    ActualizarFechas();
 
     let sesionGuardada = localStorage.getItem("sesion");
 
@@ -257,13 +296,6 @@ document.addEventListener("DOMContentLoaded", () => {
     generalGrafica7();
 });
 
-function PruebaN() {
-    InvocarCarga(4000);
-    NotificacionToast("Exito", "prueba de mensaje de un exito");
-    NotificacionToast("Error", "prueba de mensaje de un error");
-    NotificacionToast("Adv", "prueba de mensaje de advertencia");
-    NotificacionToast("Info", "prueba de mensaje de informacion");
-}
 // Notificaciones TOAST
 function NotificacionToast(Tipo, Mensaje) {
     let Imagen;

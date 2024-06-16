@@ -5,12 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="Dashboard.css" />
         <link rel="stylesheet" href="wwwroot/lib/charts.css/dist/charts.css" />
-        <title>TEC-EIS</title>
+        <title>Document</title>
     </head>
     <body>
         <div id="Dashboard">
             <nav transition-style="in:wipe:down">
-                <div class="titulo" onclick="PruebaN()">
+                <div class="titulo">
                     <label><span>TEC-</span><span>EIS</span></label>
                 </div>
                 <menu>
@@ -42,14 +42,16 @@
                                     role="switch"
                                     name="theme"
                                     value="dark"
-                                    onclick="cambiarTema()"
+                                    onclick="cambiarModo1()"
                                     checked />
                             </span>
                         </label>
                     </div>
                     <div class="navuser">
                         <label>Usuario</label>
-                        <img src="wwwroot/Resources/User.svg" />
+                        <img
+                            src="wwwroot/Resources/User.svg"
+                            onclick="MostrarPerfil(event)" />
                     </div>
                 </menu>
             </nav>
@@ -59,8 +61,8 @@
                     <label>Anual</label>
                     <select id="anual">
                         <option value="SinFiltro">TODOS</option>
-                        <option value="AnoActual">2024</option>
-                        <option value="AnoPasado">⭠2023</option>
+                        <option value="AnoActual" id="anoactual"></option>
+                        <option value="AnoPasado" id="anopasado"></option>
                     </select>
                 </div>
                 <div class="filtrosbox">
@@ -183,9 +185,7 @@
                 <div class="maintop">
                     <h1>Contenido principal</h1>
                     <button onclick="cambiarDisplay()">
-                        <img
-                            src="/TEC/wwwroot/Resources/Barras.svg"
-                            id="imggrid" />
+                        <img src="wwwroot/Resources/Barras.svg" id="imggrid" />
                     </button>
                 </div>
                 <section class="maincards" id="maincardsGeneral">
@@ -277,6 +277,26 @@
                     >
                 </section>
             </main>
+        </div>
+        <div id="perfil">
+            <div>
+                <img src="wwwroot/Resources/User.svg" />
+            </div>
+            <h2>Usuario</h2>
+            <label> Tema: </label>
+            <label for="theme" class="theme">
+                <span class="theme__toggle-wrap">
+                    <input
+                        id="theme2"
+                        class="theme__toggle"
+                        type="checkbox"
+                        role="switch"
+                        name="theme"
+                        value="dark"
+                        onclick="cambiarModo2()"
+                        checked />
+                </span>
+            </label>
         </div>
         <section id="toastnotf"></section>
         <figure id="Cargando"></figure>
